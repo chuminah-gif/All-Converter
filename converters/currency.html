@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("ac_lang")) return;
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/currency.html"); }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>환율 변환기 | 원화·달러·엔화 실시간 환율 계산 - 올컨버터</title>
+<meta name="description" content="원화(KRW), 달러(USD), 유로(EUR), 엔화(JPY) 등 주요 통화 환율을 매 영업일 갱신되는 기준 환율로 계산하는 무료 계산기입니다." />
+<link rel="canonical" href="https://all-converter.vercel.app/converters/currency.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 올컨버터</a>
+    <nav class="main-nav">
+      <a href="../index.html">홈</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="length.html">길이</a>
+          <a href="weight.html">무게</a>
+          <a href="temperature.html">온도</a>
+          <a href="speed.html">속도</a>
+          <a href="volume.html">부피</a>
+          <a href="area.html">넓이</a>
+        </div>
+      </div>
+      <a href="currency.html" class="active">환율</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">사이즈 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="shoe-size.html">신발 사이즈</a>
+          <a href="clothing-size.html">옷 사이즈</a>
+          <a href="underwear-size.html">속옷 사이즈</a>
+        </div>
+      </div>
+      <a href="timezone.html">시간대</a>
+      <a href="../guide/index.html">가이드</a>
+      <a href="../about.html">사이트소개</a>
+      <a href="../en/converters/currency.html" class="lang-switch" data-lang="en">EN</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 환율 변환기</p>
+    <h1>환율 변환기</h1>
+    <p>원화·달러·유로·엔화 등 주요 통화를 매 영업일 갱신되는 기준 환율로 계산합니다.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="calc-layout">
+    <div class="card">
+      <h2>환율 변환</h2>
+      <p class="card-sub" id="rateStatus">환율 정보를 불러오는 중입니다...</p>
+      <div class="field">
+        <label for="inputValue">금액 입력</label>
+        <input type="number" id="inputValue" value="100" />
+      </div>
+      <div class="convert-row">
+        <div class="field">
+          <label for="fromUnit">변환 전 통화</label>
+          <select id="fromUnit"></select>
+        </div>
+        <button type="button" class="swap-btn" id="swapBtn" aria-label="통화 바꾸기">⇄</button>
+        <div class="field">
+          <label for="toUnit">변환 후 통화</label>
+          <select id="toUnit"></select>
+        </div>
+      </div>
+      <div class="field">
+        <label>결과</label>
+        <div class="value-display" id="resultValue">-</div>
+      </div>
+      <div class="disclaimer-box">
+        <span class="mark">ℹ</span>
+        <span>유럽중앙은행(ECB) 기준 매 영업일 환율이며, 실제 은행·환전소 거래 환율과는 수수료 등으로 차이가 있을 수 있습니다.</span>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2>환율 안내</h2>
+      <p>이 계산기는 무료 공개 환율 API(Frankfurter, 유럽중앙은행 기준)를 사용해 매 영업일 갱신되는 환율로 계산합니다. 실시간 거래 환율이 아니라 참고용 기준 환율이라는 점에 유의하세요.</p>
+      <h3>자주 찾는 통화</h3>
+      <ul>
+        <li>KRW(원화), USD(달러), EUR(유로), JPY(엔화), CNY(위안), GBP(파운드)</li>
+        <li>여행·직구가 많은 태국 바트(THB), 베트남 동(VND)도 지원합니다.</li>
+      </ul>
+      <h3>참고</h3>
+      <p>실제 해외 송금이나 환전 시 은행·환전소마다 우대율과 수수료가 다르므로, 정확한 금액은 이용하시는 금융기관을 통해 확인하세요.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (Google AdSense 승인 후 게재)</div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>올컨버터</h4>
+        <p>길이·무게·온도 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 무료로 변환할 수 있는 정보 제공 사이트입니다.</p>
+      </div>
+      <div>
+        <h4>변환기</h4>
+        <ul>
+          <li><a href="length.html">길이 변환기</a></li>
+          <li><a href="currency.html">환율 변환기</a></li>
+          <li><a href="shoe-size.html">신발 사이즈 변환기</a></li>
+          <li><a href="timezone.html">시간대 변환기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>사이트 정보</h4>
+        <ul>
+          <li><a href="../about.html">사이트 소개</a></li>
+          <li><a href="../guide/index.html">가이드</a></li>
+          <li><a href="../contact.html">문의하기</a></li>
+          <li><a href="../privacy.html">개인정보처리방침</a></li>
+          <li><a href="../terms.html">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 올컨버터. All rights reserved.</span>
+      <span>본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/converters.js"></script>
+<script src="../js/main.js"></script>
+<script>
+var inputEl = document.getElementById("inputValue");
+var fromSel = document.getElementById("fromUnit");
+var toSel = document.getElementById("toUnit");
+var resultEl = document.getElementById("resultValue");
+var statusEl = document.getElementById("rateStatus");
+var swapBtn = document.getElementById("swapBtn");
+var rates = null;
+
+CURRENCY_LIST.forEach(function (cur) {
+  var opt1 = document.createElement("option");
+  opt1.value = cur;
+  opt1.textContent = cur;
+  fromSel.appendChild(opt1);
+  var opt2 = document.createElement("option");
+  opt2.value = cur;
+  opt2.textContent = cur;
+  toSel.appendChild(opt2);
+});
+fromSel.value = "USD";
+toSel.value = "KRW";
+
+function recalc() {
+  if (!rates) return;
+  var value = parseFloat(inputEl.value);
+  if (isNaN(value)) { resultEl.textContent = "-"; return; }
+  var usdValue = value / rates[fromSel.value];
+  var result = usdValue * rates[toSel.value];
+  resultEl.textContent = formatNumber(result, 2) + " " + toSel.value;
+}
+
+fetchExchangeRates("USD").then(function (data) {
+  rates = data.rates;
+  rates.USD = 1;
+  statusEl.textContent = "기준일: " + data.date + " (유럽중앙은행 ECB 기준)";
+  recalc();
+}).catch(function () {
+  statusEl.textContent = "환율 정보를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
+});
+
+inputEl.addEventListener("input", recalc);
+fromSel.addEventListener("change", recalc);
+toSel.addEventListener("change", recalc);
+swapBtn.addEventListener("click", function () {
+  var tmp = fromSel.value;
+  fromSel.value = toSel.value;
+  toSel.value = tmp;
+  recalc();
+});
+</script>
+</body>
+</html>

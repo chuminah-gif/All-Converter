@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("ac_lang")) return;
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/area.html"); }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>넓이 변환기 | m²·평 ↔ 제곱피트·에이커·헥타르 - 올컨버터</title>
+<meta name="description" content="제곱미터, 평(坪)부터 제곱피트, 에이커, 헥타르까지 넓이 단위를 정확하게 변환하는 무료 계산기입니다." />
+<link rel="canonical" href="https://all-converter.vercel.app/converters/area.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 올컨버터</a>
+    <nav class="main-nav">
+      <a href="../index.html">홈</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="length.html">길이</a>
+          <a href="weight.html">무게</a>
+          <a href="temperature.html">온도</a>
+          <a href="speed.html">속도</a>
+          <a href="volume.html">부피</a>
+          <a href="area.html" class="active">넓이</a>
+        </div>
+      </div>
+      <a href="currency.html">환율</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">사이즈 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="shoe-size.html">신발 사이즈</a>
+          <a href="clothing-size.html">옷 사이즈</a>
+          <a href="underwear-size.html">속옷 사이즈</a>
+        </div>
+      </div>
+      <a href="timezone.html">시간대</a>
+      <a href="../guide/index.html">가이드</a>
+      <a href="../about.html">사이트소개</a>
+      <a href="../en/converters/area.html" class="lang-switch" data-lang="en">EN</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 넓이 변환기</p>
+    <h1>넓이 변환기</h1>
+    <p>제곱미터·평·제곱피트, 값을 입력하면 바로 계산됩니다.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="calc-layout">
+    <div class="card">
+      <h2>넓이 변환</h2>
+      <p class="card-sub">값을 입력하고 단위를 선택하면 자동으로 변환됩니다. 부동산 거래에서 자주 쓰는 '평'도 지원합니다.</p>
+      <div class="field">
+        <label for="inputValue">값 입력</label>
+        <input type="number" id="inputValue" value="1" />
+      </div>
+      <div class="convert-row">
+        <div class="field">
+          <label for="fromUnit">변환 전 단위</label>
+          <select id="fromUnit"></select>
+        </div>
+        <button type="button" class="swap-btn" id="swapBtn" aria-label="단위 바꾸기">⇄</button>
+        <div class="field">
+          <label for="toUnit">변환 후 단위</label>
+          <select id="toUnit"></select>
+        </div>
+      </div>
+      <div class="field">
+        <label>결과</label>
+        <div class="value-display" id="resultValue">-</div>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2>넓이 단위 안내</h2>
+      <p>1평은 정확히 3.305785m²이며, 아파트나 주택 면적을 이야기할 때 흔히 쓰입니다. 1에이커는 4046.86m², 1헥타르는 10,000m²입니다.</p>
+      <table>
+        <tr><th>단위</th><th>기준(1단위 = ? m²)</th></tr>
+        <tr><td>평</td><td>3.3058 m²</td></tr>
+        <tr><td>제곱피트(ft²)</td><td>0.0929 m²</td></tr>
+        <tr><td>에이커(acre)</td><td>4,046.86 m²</td></tr>
+        <tr><td>헥타르(ha)</td><td>10,000 m²</td></tr>
+      </table>
+      <h3>자주 쓰는 예시</h3>
+      <ul>
+        <li>흔히 말하는 "국민평형" 34평은 약 112.4m²입니다.</li>
+        <li>미국 부동산 매물 정보는 보통 제곱피트(sqft)로 표기됩니다.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (Google AdSense 승인 후 게재)</div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>올컨버터</h4>
+        <p>길이·무게·온도 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 무료로 변환할 수 있는 정보 제공 사이트입니다.</p>
+      </div>
+      <div>
+        <h4>변환기</h4>
+        <ul>
+          <li><a href="length.html">길이 변환기</a></li>
+          <li><a href="currency.html">환율 변환기</a></li>
+          <li><a href="shoe-size.html">신발 사이즈 변환기</a></li>
+          <li><a href="timezone.html">시간대 변환기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>사이트 정보</h4>
+        <ul>
+          <li><a href="../about.html">사이트 소개</a></li>
+          <li><a href="../guide/index.html">가이드</a></li>
+          <li><a href="../contact.html">문의하기</a></li>
+          <li><a href="../privacy.html">개인정보처리방침</a></li>
+          <li><a href="../terms.html">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 올컨버터. All rights reserved.</span>
+      <span>본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/converters.js"></script>
+<script src="../js/main.js"></script>
+<script>
+initUnitConverter({
+  units: AREA_UNITS,
+  inputId: "inputValue",
+  fromId: "fromUnit",
+  toId: "toUnit",
+  resultId: "resultValue",
+  swapId: "swapBtn",
+  defaultFrom: "m2",
+  defaultTo: "pyeong"
+});
+</script>
+</body>
+</html>

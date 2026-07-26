@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("ac_lang")) return;
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/guide/currency-guide.html"); }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>환율 완전 정리 | 기준 환율과 실제 환전 환율의 차이 - 올컨버터</title>
+<meta name="description" content="기준 환율(매매기준율)과 은행·환전소의 실제 환전 환율이 왜 다른지, 유리하게 환전하는 방법까지 정리했습니다." />
+<link rel="canonical" href="https://all-converter.vercel.app/guide/currency-guide.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 올컨버터</a>
+    <nav class="main-nav">
+      <a href="../index.html">홈</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="../converters/length.html">길이</a>
+          <a href="../converters/weight.html">무게</a>
+          <a href="../converters/temperature.html">온도</a>
+          <a href="../converters/speed.html">속도</a>
+          <a href="../converters/volume.html">부피</a>
+          <a href="../converters/area.html">넓이</a>
+        </div>
+      </div>
+      <a href="../converters/currency.html">환율</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">사이즈 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="../converters/shoe-size.html">신발 사이즈</a>
+          <a href="../converters/clothing-size.html">옷 사이즈</a>
+          <a href="../converters/underwear-size.html">속옷 사이즈</a>
+        </div>
+      </div>
+      <a href="../converters/timezone.html">시간대</a>
+      <a href="index.html" class="active">가이드</a>
+      <a href="../about.html">사이트소개</a>
+      <a href="../en/guide/currency-guide.html" class="lang-switch" data-lang="en">EN</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">홈</a> / <a href="index.html">가이드</a> / 환율</p>
+    <h1>환율 완전 정리</h1>
+    <p>기준 환율과 실제 환전 환율이 다른 이유를 정리했습니다.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="card prose">
+
+    <h2>기준 환율이란?</h2>
+    <p>기준 환율(매매기준율)은 그날의 시장 거래를 바탕으로 산출되는 "대표 환율"입니다. 뉴스에서 "오늘 환율 1,320원"이라고 할 때가 바로 이 기준 환율입니다. 이 계산기가 사용하는 환율도 유럽중앙은행(ECB)이 매 영업일 발표하는 기준 환율입니다.</p>
+
+    <h2>왜 은행 환전 환율은 기준 환율과 다를까요?</h2>
+    <p>은행이나 환전소는 기준 환율에 자체 수수료(스프레드)를 더하거나 뺀 "살 때(매입)"와 "팔 때(매도)" 환율을 따로 적용합니다. 예를 들어 기준 환율이 1,320원이라면, 은행에서 달러를 살 때는 1,340원, 팔 때는 1,300원 식으로 차이가 발생합니다. 이 차이가 은행의 환전 수수료 수익입니다.</p>
+
+    <h2>환전 우대율이란?</h2>
+    <p>은행 앱이나 창구에서 "환율 우대 90%"라고 표시되는 것은, 이 스프레드(수수료 차이)의 90%를 깎아준다는 뜻입니다. 우대율이 높을수록 기준 환율에 가깝게 환전할 수 있어 유리합니다.</p>
+
+    <div class="info-callout">
+      이 계산기의 환율은 기준 환율(참고용)입니다. 실제 환전·송금 시 받는 금액은 이용하시는 은행의 환전 우대율과 수수료에 따라 달라지니, 정확한 금액은 해당 금융기관 앱이나 창구에서 확인하세요.
+    </div>
+
+    <h2>자주 묻는 질문</h2>
+    <h3>Q. 환율은 얼마나 자주 바뀌나요?</h3>
+    <p>이 계산기가 사용하는 기준 환율은 매 영업일 1회 갱신됩니다. 실제 은행·증권사의 실시간 거래 환율은 초 단위로 계속 변동합니다.</p>
+    <h3>Q. 환전은 언제 하는 게 유리한가요?</h3>
+    <p>환율은 예측이 어려운 변수이므로, 특정 시점을 노리기보다는 필요한 시점에 우대율이 높은 채널(모바일 앱, 제휴 이벤트 등)을 이용하는 것이 실질적으로 더 유리한 경우가 많습니다.</p>
+
+    <p style="margin-top:28px;">
+      <a href="../converters/currency.html" class="btn btn-secondary">환율 변환기로 계산하기 →</a>
+    </p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>올컨버터</h4>
+        <p>길이·무게·온도 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 무료로 변환할 수 있는 정보 제공 사이트입니다.</p>
+      </div>
+      <div>
+        <h4>변환기</h4>
+        <ul>
+          <li><a href="../converters/length.html">길이 변환기</a></li>
+          <li><a href="../converters/currency.html">환율 변환기</a></li>
+          <li><a href="../converters/shoe-size.html">신발 사이즈 변환기</a></li>
+          <li><a href="../converters/timezone.html">시간대 변환기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>사이트 정보</h4>
+        <ul>
+          <li><a href="../about.html">사이트 소개</a></li>
+          <li><a href="index.html">가이드</a></li>
+          <li><a href="../contact.html">문의하기</a></li>
+          <li><a href="../privacy.html">개인정보처리방침</a></li>
+          <li><a href="../terms.html">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 올컨버터. All rights reserved.</span>
+      <span>본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

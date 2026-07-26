@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("ac_lang")) return;
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/timezone.html"); }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>세계 시간대 변환기 | 서울 기준 해외 도시 시차 계산 - 올컨버터</title>
+<meta name="description" content="서울을 포함한 뉴욕, 런던, 도쿄 등 세계 주요 도시의 현재 시각과 시차를 한눈에 비교하는 무료 시간대 변환기입니다." />
+<link rel="canonical" href="https://all-converter.vercel.app/converters/timezone.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 올컨버터</a>
+    <nav class="main-nav">
+      <a href="../index.html">홈</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="length.html">길이</a>
+          <a href="weight.html">무게</a>
+          <a href="temperature.html">온도</a>
+          <a href="speed.html">속도</a>
+          <a href="volume.html">부피</a>
+          <a href="area.html">넓이</a>
+        </div>
+      </div>
+      <a href="currency.html">환율</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">사이즈 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="shoe-size.html">신발 사이즈</a>
+          <a href="clothing-size.html">옷 사이즈</a>
+          <a href="underwear-size.html">속옷 사이즈</a>
+        </div>
+      </div>
+      <a href="timezone.html" class="active">시간대</a>
+      <a href="../guide/index.html">가이드</a>
+      <a href="../about.html">사이트소개</a>
+      <a href="../en/converters/timezone.html" class="lang-switch" data-lang="en">EN</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 시간대 변환기</p>
+    <h1>세계 시간대 변환기</h1>
+    <p>기준 도시의 날짜·시간을 입력하면 다른 도시의 현재 시각을 계산합니다.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="calc-layout">
+    <div class="card">
+      <h2>시간대 변환</h2>
+      <p class="card-sub">기준 시각을 입력하지 않으면 현재 시각을 기준으로 계산합니다.</p>
+      <div class="field">
+        <label for="baseZone">기준 도시</label>
+        <select id="baseZone"></select>
+      </div>
+      <div class="field-row" style="margin-bottom:18px;">
+        <div>
+          <label style="display:block; font-size:0.88rem; font-weight:700; margin-bottom:6px;" for="baseDate">날짜</label>
+          <input type="date" id="baseDate" />
+        </div>
+        <div>
+          <label style="display:block; font-size:0.88rem; font-weight:700; margin-bottom:6px;" for="baseTime">시간</label>
+          <input type="time" id="baseTime" />
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary btn-sm" id="nowBtn">지금 시각으로 채우기</button>
+    </div>
+
+    <div class="card">
+      <h2>세계 도시별 시각</h2>
+      <div id="resultWrap"></div>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (Google AdSense 승인 후 게재)</div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>올컨버터</h4>
+        <p>길이·무게·온도 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 무료로 변환할 수 있는 정보 제공 사이트입니다.</p>
+      </div>
+      <div>
+        <h4>변환기</h4>
+        <ul>
+          <li><a href="length.html">길이 변환기</a></li>
+          <li><a href="currency.html">환율 변환기</a></li>
+          <li><a href="shoe-size.html">신발 사이즈 변환기</a></li>
+          <li><a href="timezone.html">시간대 변환기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>사이트 정보</h4>
+        <ul>
+          <li><a href="../about.html">사이트 소개</a></li>
+          <li><a href="../guide/index.html">가이드</a></li>
+          <li><a href="../contact.html">문의하기</a></li>
+          <li><a href="../privacy.html">개인정보처리방침</a></li>
+          <li><a href="../terms.html">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 올컨버터. All rights reserved.</span>
+      <span>본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/converters.js"></script>
+<script src="../js/main.js"></script>
+<script>
+var baseZoneSelect = document.getElementById("baseZone");
+var baseDateInput = document.getElementById("baseDate");
+var baseTimeInput = document.getElementById("baseTime");
+var resultWrap = document.getElementById("resultWrap");
+
+TIMEZONE_LIST.forEach(function (tz) {
+  var opt = document.createElement("option");
+  opt.value = tz.key;
+  opt.textContent = tz.label;
+  baseZoneSelect.appendChild(opt);
+});
+baseZoneSelect.value = "Asia/Seoul";
+
+function fillNow() {
+  var now = new Date();
+  var parts = getTimeInZone(now, baseZoneSelect.value);
+  baseDateInput.value = parts.year + "-" + parts.month + "-" + parts.day;
+  baseTimeInput.value = parts.hour + ":" + parts.minute;
+  recalc();
+}
+
+function recalc() {
+  if (!baseDateInput.value || !baseTimeInput.value) { resultWrap.innerHTML = ""; return; }
+
+  // 기준 도시의 UTC 오프셋(분)을 구해, 입력된 "그 도시의 로컬 시각"을 UTC로 역산합니다.
+  var baseZone = baseZoneSelect.value;
+  var localNaive = new Date(baseDateInput.value + "T" + baseTimeInput.value + ":00Z");
+  var zoneParts = getTimeInZone(localNaive, baseZone);
+  var zoneAsUTC = Date.UTC(
+    parseInt(zoneParts.year, 10), parseInt(zoneParts.month, 10) - 1, parseInt(zoneParts.day, 10),
+    parseInt(zoneParts.hour, 10), parseInt(zoneParts.minute, 10), parseInt(zoneParts.second, 10)
+  );
+  var offsetMs = zoneAsUTC - localNaive.getTime();
+  var trueUTC = new Date(localNaive.getTime() - offsetMs);
+
+  var html = '<table class="history-table"><tr><th>도시</th><th>날짜/시각</th></tr>';
+  TIMEZONE_LIST.forEach(function (tz) {
+    var p = getTimeInZone(trueUTC, tz.key);
+    var isBase = tz.key === baseZone;
+    html += "<tr" + (isBase ? ' style="font-weight:800; color:var(--color-accent-dark);"' : "") + ">";
+    html += "<td>" + tz.label + (isBase ? " (기준)" : "") + "</td>";
+    html += "<td>" + p.year + "-" + p.month + "-" + p.day + " " + p.hour + ":" + p.minute + "</td>";
+    html += "</tr>";
+  });
+  html += "</table>";
+  resultWrap.innerHTML = html;
+}
+
+document.getElementById("nowBtn").addEventListener("click", fillNow);
+baseZoneSelect.addEventListener("change", recalc);
+baseDateInput.addEventListener("input", recalc);
+baseTimeInput.addEventListener("input", recalc);
+
+fillNow();
+</script>
+</body>
+</html>

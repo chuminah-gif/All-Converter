@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("ac_lang")) return;
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.indexOf("ko") !== 0) { window.location.replace("en/index.html"); }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>올컨버터 | 길이·무게·온도·통화·신발/옷 사이즈·시간대 무료 변환기</title>
+<meta name="description" content="길이, 무게, 온도, 속도, 부피, 넓이 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 — 실생활에서 자주 찾는 모든 변환을 한 곳에서 무료로 계산하는 올컨버터입니다." />
+<link rel="canonical" href="https://all-converter.vercel.app/" />
+<link rel="alternate" hreflang="ko" href="https://all-converter.vercel.app/" />
+<link rel="alternate" hreflang="en" href="https://all-converter.vercel.app/en/" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 올컨버터</a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">홈</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="converters/length.html">길이</a>
+          <a href="converters/weight.html">무게</a>
+          <a href="converters/temperature.html">온도</a>
+          <a href="converters/speed.html">속도</a>
+          <a href="converters/volume.html">부피</a>
+          <a href="converters/area.html">넓이</a>
+        </div>
+      </div>
+      <a href="converters/currency.html">환율</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">사이즈 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="converters/shoe-size.html">신발 사이즈</a>
+          <a href="converters/clothing-size.html">옷 사이즈</a>
+          <a href="converters/underwear-size.html">속옷 사이즈</a>
+        </div>
+      </div>
+      <a href="converters/timezone.html">시간대</a>
+      <a href="guide/index.html">가이드</a>
+      <a href="about.html">사이트소개</a>
+      <a href="en/index.html" class="lang-switch" data-lang="en">EN</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p style="opacity:0.85; font-weight:600; margin-bottom:10px;">무료 단위·환율·사이즈 변환기</p>
+    <h1>일상에서 헷갈리는 모든 단위, 한 번에 변환하세요</h1>
+    <p>길이·무게·온도부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지. 회원가입 없이 누구나 무료로 바로 계산할 수 있습니다.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="feature-grid">
+    <a class="feature-card" href="converters/length.html">
+      <div class="icon">📏</div>
+      <h3>길이 변환</h3>
+      <p>cm, m, km ↔ 인치, 피트, 마일</p>
+      <span class="go">변환하기 →</span>
+    </a>
+    <a class="feature-card" href="converters/currency.html">
+      <div class="icon">💱</div>
+      <h3>환율 변환</h3>
+      <p>실시간에 가까운 환율로 원화·달러 등 변환</p>
+      <span class="go">변환하기 →</span>
+    </a>
+    <a class="feature-card" href="converters/shoe-size.html">
+      <div class="icon">👟</div>
+      <h3>신발 사이즈</h3>
+      <p>한국 ↔ 미국·영국·유럽 신발 사이즈</p>
+      <span class="go">변환하기 →</span>
+    </a>
+    <a class="feature-card" href="converters/timezone.html">
+      <div class="icon">🕐</div>
+      <h3>세계 시간대</h3>
+      <p>서울 기준 해외 도시 현재 시각 한눈에</p>
+      <span class="go">변환하기 →</span>
+    </a>
+  </div>
+</div>
+
+<div class="container section">
+  <h2 class="section-title">단위 변환</h2>
+  <p class="section-desc">길이·무게·온도·속도·부피·넓이 등 실생활과 학업, 직구·여행에서 자주 쓰는 단위를 계산합니다.</p>
+  <div class="guide-grid">
+    <a class="guide-card" href="converters/length.html"><span class="tag">길이</span><h3>길이 변환기</h3><p>mm·cm·m·km ↔ 인치·피트·야드·마일</p></a>
+    <a class="guide-card" href="converters/weight.html"><span class="tag">무게</span><h3>무게 변환기</h3><p>g·kg·톤 ↔ 온스·파운드</p></a>
+    <a class="guide-card" href="converters/temperature.html"><span class="tag">온도</span><h3>온도 변환기</h3><p>섭씨·화씨·켈빈 상호 변환</p></a>
+    <a class="guide-card" href="converters/speed.html"><span class="tag">속도</span><h3>속도 변환기</h3><p>km/h·mph·m/s·노트</p></a>
+    <a class="guide-card" href="converters/volume.html"><span class="tag">부피</span><h3>부피 변환기</h3><p>mL·L ↔ 갤런·쿼트·컵·액량온스</p></a>
+    <a class="guide-card" href="converters/area.html"><span class="tag">넓이</span><h3>넓이 변환기</h3><p>m²·평 ↔ 제곱피트·에이커·헥타르</p></a>
+  </div>
+</div>
+
+<div class="container section" style="padding-top:0;">
+  <h2 class="section-title">사이즈 변환</h2>
+  <p class="section-desc">해외 직구, 여행 쇼핑 시 가장 많이 검색되는 신발·옷·속옷 사이즈를 나라별로 환산합니다.</p>
+  <div class="guide-grid">
+    <a class="guide-card" href="converters/shoe-size.html"><span class="tag">신발</span><h3>신발 사이즈 변환기</h3><p>한국(mm) ↔ 미국·영국·유럽 사이즈</p></a>
+    <a class="guide-card" href="converters/clothing-size.html"><span class="tag">의류</span><h3>옷 사이즈 변환기</h3><p>여성복·남성 셔츠 한국 ↔ 미국·영국·유럽</p></a>
+    <a class="guide-card" href="converters/underwear-size.html"><span class="tag">속옷</span><h3>속옷(브라) 사이즈 변환기</h3><p>밴드·컵 사이즈 한국 ↔ 미국·유럽·중국</p></a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ad-slot">광고 영역 (Google AdSense 승인 후 게재)</div>
+</div>
+
+<div class="container section" style="padding-top:0;">
+  <h2 class="section-title">왜 올컨버터인가요?</h2>
+  <div class="guide-grid">
+    <div class="guide-card"><span class="tag">무료</span><h3>회원가입 없이 바로 이용</h3><p>모든 변환기를 로그인 없이 즉시 무료로 사용할 수 있습니다.</p></div>
+    <div class="guide-card"><span class="tag">정확성</span><h3>검증된 환산 기준 사용</h3><p>국제 표준 단위 정의와 공신력 있는 사이즈 환산표를 기준으로 계산합니다.</p></div>
+    <div class="guide-card"><span class="tag">다국어</span><h3>한국어·영어 페이지 제공</h3><p>국내외 어디서든 편하게 이용할 수 있도록 한국어와 영어 버전을 함께 제공합니다.</p></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>올컨버터</h4>
+        <p>길이·무게·온도 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 무료로 변환할 수 있는 정보 제공 사이트입니다.</p>
+      </div>
+      <div>
+        <h4>변환기</h4>
+        <ul>
+          <li><a href="converters/length.html">길이 변환기</a></li>
+          <li><a href="converters/currency.html">환율 변환기</a></li>
+          <li><a href="converters/shoe-size.html">신발 사이즈 변환기</a></li>
+          <li><a href="converters/timezone.html">시간대 변환기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>사이트 정보</h4>
+        <ul>
+          <li><a href="about.html">사이트 소개</a></li>
+          <li><a href="guide/index.html">가이드</a></li>
+          <li><a href="contact.html">문의하기</a></li>
+          <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="terms.html">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 올컨버터. All rights reserved.</span>
+      <span>본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

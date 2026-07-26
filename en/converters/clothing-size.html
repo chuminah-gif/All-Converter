@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>Clothing Size Converter | Korea ↔ US, UK, EU Sizes - All Converter</title>
+<meta name="description" content="Convert Korean clothing sizes for women's wear and men's shirts to US, UK, and EU sizes instantly." />
+<link rel="canonical" href="https://all-converter.vercel.app/en/converters/clothing-size.html" />
+<link rel="alternate" hreflang="ko" href="https://all-converter.vercel.app/converters/clothing-size.html" />
+<link rel="alternate" hreflang="en" href="https://all-converter.vercel.app/en/converters/clothing-size.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> All Converter</a>
+    <nav class="main-nav">
+      <a href="../index.html">Home</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">Unit Converters <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="length.html">Length</a>
+          <a href="weight.html">Weight</a>
+          <a href="temperature.html">Temperature</a>
+          <a href="speed.html">Speed</a>
+          <a href="volume.html">Volume</a>
+          <a href="area.html">Area</a>
+        </div>
+      </div>
+      <a href="currency.html">Currency</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">Size Converters <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="shoe-size.html">Shoe Size</a>
+          <a href="clothing-size.html" class="active">Clothing Size</a>
+          <a href="underwear-size.html">Bra Size</a>
+        </div>
+      </div>
+      <a href="timezone.html">Time Zones</a>
+      <a href="../guide/index.html">Guides</a>
+      <a href="../about.html">About</a>
+      <a href="../../converters/clothing-size.html" class="lang-switch" data-lang="ko">KO</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / Clothing Size Converter</p>
+    <h1>Clothing Size Converter</h1>
+    <p>Select a Korean size to see the US, UK, and EU equivalents instantly.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="calc-layout">
+    <div class="card">
+      <h2>Convert Clothing Size</h2>
+      <p class="card-sub">Supports women's wear (44, 55, etc.) and men's shirts (95, 100, etc.).</p>
+      <div class="field">
+        <label for="categorySelect">Category</label>
+        <select id="categorySelect">
+          <option value="women">Women's wear</option>
+          <option value="men">Men's shirts</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="krSelect">Korean size</label>
+        <select id="krSelect"></select>
+      </div>
+      <div class="field">
+        <label>Result</label>
+        <div class="value-display" id="resultValue">-</div>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2 id="tableTitle">Women's Wear Size Chart</h2>
+      <div id="tableWrap"></div>
+      <div class="info-callout">
+        Even the same labeled size can vary between brands or country of origin. For an accurate purchase, we recommend also checking the brand's own measurement chart.
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot">Ad space (available after Google AdSense approval)</div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>All Converter</h4>
+        <p>A free tool for converting units, currency, international shoe/clothing/bra sizes, and world time zones.</p>
+      </div>
+      <div>
+        <h4>Converters</h4>
+        <ul>
+          <li><a href="length.html">Length Converter</a></li>
+          <li><a href="currency.html">Currency Converter</a></li>
+          <li><a href="shoe-size.html">Shoe Size Converter</a></li>
+          <li><a href="timezone.html">Time Zone Converter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../guide/index.html">Guides</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 All Converter. All rights reserved.</span>
+      <span>Results are for reference only and have no legal effect.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/converters.js"></script>
+<script src="../../js/main.js"></script>
+<script>
+var categorySelect = document.getElementById("categorySelect");
+var krSelect = document.getElementById("krSelect");
+var resultEl = document.getElementById("resultValue");
+var tableTitle = document.getElementById("tableTitle");
+var tableWrap = document.getElementById("tableWrap");
+
+function currentTable() {
+  return categorySelect.value === "women" ? WOMEN_CLOTHING_TABLE : MEN_SHIRT_TABLE;
+}
+
+function populateKrSelect() {
+  krSelect.innerHTML = "";
+  currentTable().forEach(function (row) {
+    var opt = document.createElement("option");
+    opt.value = row.kr;
+    opt.textContent = row.kr;
+    krSelect.appendChild(opt);
+  });
+}
+
+function renderTable() {
+  var isWomen = categorySelect.value === "women";
+  tableTitle.textContent = (isWomen ? "Women's Wear" : "Men's Shirt") + " Size Chart";
+  var rows = currentTable();
+  var html = isWomen
+    ? "<table><tr><th>Korea</th><th>US</th><th>UK</th><th>EU</th></tr>"
+    : "<table><tr><th>Korea</th><th>International</th><th>US/UK</th><th>EU</th></tr>";
+  rows.forEach(function (r) {
+    if (isWomen) {
+      html += "<tr><td>" + r.kr + "</td><td>" + r.us + "</td><td>" + r.uk + "</td><td>" + r.eu + "</td></tr>";
+    } else {
+      html += "<tr><td>" + r.kr + "</td><td>" + r.intl + "</td><td>" + r.intl + "</td><td>" + r.eu + "</td></tr>";
+    }
+  });
+  html += "</table>";
+  tableWrap.innerHTML = html;
+}
+
+function recalc() {
+  var isWomen = categorySelect.value === "women";
+  var kr = parseInt(krSelect.value, 10);
+  var row = currentTable().filter(function (r) { return r.kr === kr; })[0];
+  if (!row) { resultEl.textContent = "-"; return; }
+  resultEl.innerHTML = isWomen
+    ? "US " + row.us + " &nbsp;|&nbsp; UK " + row.uk + " &nbsp;|&nbsp; EU " + row.eu
+    : "International " + row.intl + " &nbsp;|&nbsp; US/UK " + row.intl + " &nbsp;|&nbsp; EU " + row.eu;
+}
+
+categorySelect.addEventListener("change", function () {
+  populateKrSelect();
+  renderTable();
+  recalc();
+});
+krSelect.addEventListener("change", recalc);
+
+populateKrSelect();
+renderTable();
+recalc();
+</script>
+</body>
+</html>

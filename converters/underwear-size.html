@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("ac_lang")) return;
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/underwear-size.html"); }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>속옷(브라) 사이즈 변환기 | 한국 ↔ 미국·유럽·중국 - 올컨버터</title>
+<meta name="description" content="한국 브라 밴드·컵 사이즈를 입력하면 미국(US), 유럽(EU), 중국(CN) 사이즈를 계산해주는 무료 계산기입니다." />
+<link rel="canonical" href="https://all-converter.vercel.app/converters/underwear-size.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 올컨버터</a>
+    <nav class="main-nav">
+      <a href="../index.html">홈</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="length.html">길이</a>
+          <a href="weight.html">무게</a>
+          <a href="temperature.html">온도</a>
+          <a href="speed.html">속도</a>
+          <a href="volume.html">부피</a>
+          <a href="area.html">넓이</a>
+        </div>
+      </div>
+      <a href="currency.html">환율</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">사이즈 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="shoe-size.html">신발 사이즈</a>
+          <a href="clothing-size.html">옷 사이즈</a>
+          <a href="underwear-size.html" class="active">속옷 사이즈</a>
+        </div>
+      </div>
+      <a href="timezone.html">시간대</a>
+      <a href="../guide/index.html">가이드</a>
+      <a href="../about.html">사이트소개</a>
+      <a href="../en/converters/underwear-size.html" class="lang-switch" data-lang="en">EN</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 속옷 사이즈 변환기</p>
+    <h1>속옷(브라) 사이즈 변환기</h1>
+    <p>한국 밴드·컵 사이즈를 선택하면 미국·유럽·중국 사이즈를 알려드립니다.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="calc-layout">
+    <div class="card">
+      <h2>브라 사이즈 변환</h2>
+      <p class="card-sub">밴드(가슴 아래 둘레)와 컵 사이즈를 선택하세요.</p>
+      <div class="field-row" style="margin-bottom:18px;">
+        <div>
+          <label style="display:block; font-size:0.88rem; font-weight:700; margin-bottom:6px;" for="bandSelect">밴드(cm)</label>
+          <select id="bandSelect"></select>
+        </div>
+        <div>
+          <label style="display:block; font-size:0.88rem; font-weight:700; margin-bottom:6px;" for="cupSelect">컵</label>
+          <select id="cupSelect"></select>
+        </div>
+      </div>
+      <div class="field">
+        <label>결과</label>
+        <div class="value-display" id="resultValue">-</div>
+      </div>
+      <div class="disclaimer-box">
+        <span class="mark">ℹ</span>
+        <span>영국(UK) 컵 표기는 DD 이상부터 미국과 알파벳 체계가 달라질 수 있어, 큰 컵 사이즈는 구매하시려는 브랜드의 자체 사이즈표를 함께 확인하는 것을 권장합니다.</span>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2>브라 사이즈 환산표</h2>
+      <div id="tableWrap"></div>
+      <h3>사이즈 표기 방식이 다른 이유</h3>
+      <p>한국·유럽·중국은 밴드 둘레를 cm 기준(5cm 단위)으로, 미국·영국은 인치 기준(2인치 단위)으로 표기합니다. 같은 신체 치수라도 표기 체계가 달라 숫자가 다르게 보일 뿐입니다.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (Google AdSense 승인 후 게재)</div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>올컨버터</h4>
+        <p>길이·무게·온도 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 무료로 변환할 수 있는 정보 제공 사이트입니다.</p>
+      </div>
+      <div>
+        <h4>변환기</h4>
+        <ul>
+          <li><a href="length.html">길이 변환기</a></li>
+          <li><a href="currency.html">환율 변환기</a></li>
+          <li><a href="shoe-size.html">신발 사이즈 변환기</a></li>
+          <li><a href="timezone.html">시간대 변환기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>사이트 정보</h4>
+        <ul>
+          <li><a href="../about.html">사이트 소개</a></li>
+          <li><a href="../guide/index.html">가이드</a></li>
+          <li><a href="../contact.html">문의하기</a></li>
+          <li><a href="../privacy.html">개인정보처리방침</a></li>
+          <li><a href="../terms.html">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 올컨버터. All rights reserved.</span>
+      <span>본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/converters.js"></script>
+<script src="../js/main.js"></script>
+<script>
+var bandSelect = document.getElementById("bandSelect");
+var cupSelect = document.getElementById("cupSelect");
+var resultEl = document.getElementById("resultValue");
+var tableWrap = document.getElementById("tableWrap");
+
+BRA_BAND_TABLE.forEach(function (b) {
+  var opt = document.createElement("option");
+  opt.value = b;
+  opt.textContent = b + "cm";
+  bandSelect.appendChild(opt);
+});
+bandSelect.value = 75;
+
+BRA_CUPS.forEach(function (c) {
+  var opt = document.createElement("option");
+  opt.value = c;
+  opt.textContent = c;
+  cupSelect.appendChild(opt);
+});
+cupSelect.value = "B";
+
+function recalc() {
+  var krBand = parseInt(bandSelect.value, 10);
+  var cup = cupSelect.value;
+  var usBand = braUsBand(krBand);
+  resultEl.innerHTML = "한국 " + krBand + cup + " &nbsp;=&nbsp; 미국/영국 " + usBand + cup + " &nbsp;=&nbsp; 유럽/중국 " + krBand + cup;
+}
+
+function renderTable() {
+  var html = "<table><tr><th>한국/유럽/중국(밴드)</th><th>미국/영국(밴드)</th></tr>";
+  BRA_BAND_TABLE.forEach(function (b) {
+    html += "<tr><td>" + b + "cm</td><td>" + braUsBand(b) + "</td></tr>";
+  });
+  html += "</table>";
+  tableWrap.innerHTML = html;
+}
+
+bandSelect.addEventListener("change", recalc);
+cupSelect.addEventListener("change", recalc);
+
+renderTable();
+recalc();
+</script>
+</body>
+</html>

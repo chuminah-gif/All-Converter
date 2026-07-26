@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("ac_lang")) return;
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/clothing-size.html"); }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>옷 사이즈 변환기 | 한국 ↔ 미국·영국·유럽 의류 사이즈 - 올컨버터</title>
+<meta name="description" content="여성복과 남성 셔츠의 한국 사이즈를 미국(US), 영국(UK), 유럽(EU) 사이즈로 변환하는 무료 계산기입니다." />
+<link rel="canonical" href="https://all-converter.vercel.app/converters/clothing-size.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 올컨버터</a>
+    <nav class="main-nav">
+      <a href="../index.html">홈</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="length.html">길이</a>
+          <a href="weight.html">무게</a>
+          <a href="temperature.html">온도</a>
+          <a href="speed.html">속도</a>
+          <a href="volume.html">부피</a>
+          <a href="area.html">넓이</a>
+        </div>
+      </div>
+      <a href="currency.html">환율</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">사이즈 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="shoe-size.html">신발 사이즈</a>
+          <a href="clothing-size.html" class="active">옷 사이즈</a>
+          <a href="underwear-size.html">속옷 사이즈</a>
+        </div>
+      </div>
+      <a href="timezone.html">시간대</a>
+      <a href="../guide/index.html">가이드</a>
+      <a href="../about.html">사이트소개</a>
+      <a href="../en/converters/clothing-size.html" class="lang-switch" data-lang="en">EN</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 옷 사이즈 변환기</p>
+    <h1>옷 사이즈 변환기</h1>
+    <p>한국 사이즈를 선택하면 미국·영국·유럽 사이즈를 바로 보여드립니다.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="calc-layout">
+    <div class="card">
+      <h2>옷 사이즈 변환</h2>
+      <p class="card-sub">여성복(66, 77 등)과 남성 셔츠(95, 100 등) 사이즈를 지원합니다.</p>
+      <div class="field">
+        <label for="categorySelect">종류</label>
+        <select id="categorySelect">
+          <option value="women">여성복</option>
+          <option value="men">남성 셔츠</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="krSelect">한국 사이즈</label>
+        <select id="krSelect"></select>
+      </div>
+      <div class="field">
+        <label>결과</label>
+        <div class="value-display" id="resultValue">-</div>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2 id="tableTitle">여성복 사이즈 환산표</h2>
+      <div id="tableWrap"></div>
+      <div class="info-callout">
+        같은 사이즈 표기라도 브랜드나 원산지에 따라 실측 치수가 다를 수 있습니다. 정확한 구매를 위해서는 각 브랜드가 제공하는 실측 사이즈표를 함께 확인하는 것이 좋습니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (Google AdSense 승인 후 게재)</div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>올컨버터</h4>
+        <p>길이·무게·온도 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 무료로 변환할 수 있는 정보 제공 사이트입니다.</p>
+      </div>
+      <div>
+        <h4>변환기</h4>
+        <ul>
+          <li><a href="length.html">길이 변환기</a></li>
+          <li><a href="currency.html">환율 변환기</a></li>
+          <li><a href="shoe-size.html">신발 사이즈 변환기</a></li>
+          <li><a href="timezone.html">시간대 변환기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>사이트 정보</h4>
+        <ul>
+          <li><a href="../about.html">사이트 소개</a></li>
+          <li><a href="../guide/index.html">가이드</a></li>
+          <li><a href="../contact.html">문의하기</a></li>
+          <li><a href="../privacy.html">개인정보처리방침</a></li>
+          <li><a href="../terms.html">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 올컨버터. All rights reserved.</span>
+      <span>본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/converters.js"></script>
+<script src="../js/main.js"></script>
+<script>
+var categorySelect = document.getElementById("categorySelect");
+var krSelect = document.getElementById("krSelect");
+var resultEl = document.getElementById("resultValue");
+var tableTitle = document.getElementById("tableTitle");
+var tableWrap = document.getElementById("tableWrap");
+
+function currentTable() {
+  return categorySelect.value === "women" ? WOMEN_CLOTHING_TABLE : MEN_SHIRT_TABLE;
+}
+
+function populateKrSelect() {
+  krSelect.innerHTML = "";
+  currentTable().forEach(function (row) {
+    var opt = document.createElement("option");
+    opt.value = row.kr;
+    opt.textContent = row.kr + (categorySelect.value === "women" ? "호" : "");
+    krSelect.appendChild(opt);
+  });
+}
+
+function renderTable() {
+  var isWomen = categorySelect.value === "women";
+  tableTitle.textContent = (isWomen ? "여성복" : "남성 셔츠") + " 사이즈 환산표";
+  var rows = currentTable();
+  var html = isWomen
+    ? "<table><tr><th>한국</th><th>미국(US)</th><th>영국(UK)</th><th>유럽(EU)</th></tr>"
+    : "<table><tr><th>한국</th><th>국제(INT)</th><th>미국/영국</th><th>유럽(EU)</th></tr>";
+  rows.forEach(function (r) {
+    if (isWomen) {
+      html += "<tr><td>" + r.kr + "</td><td>" + r.us + "</td><td>" + r.uk + "</td><td>" + r.eu + "</td></tr>";
+    } else {
+      html += "<tr><td>" + r.kr + "</td><td>" + r.intl + "</td><td>" + r.intl + "</td><td>" + r.eu + "</td></tr>";
+    }
+  });
+  html += "</table>";
+  tableWrap.innerHTML = html;
+}
+
+function recalc() {
+  var isWomen = categorySelect.value === "women";
+  var kr = parseInt(krSelect.value, 10);
+  var row = currentTable().filter(function (r) { return r.kr === kr; })[0];
+  if (!row) { resultEl.textContent = "-"; return; }
+  resultEl.innerHTML = isWomen
+    ? "미국 " + row.us + " &nbsp;|&nbsp; 영국 " + row.uk + " &nbsp;|&nbsp; 유럽 " + row.eu
+    : "국제 " + row.intl + " &nbsp;|&nbsp; 미국/영국 " + row.intl + " &nbsp;|&nbsp; 유럽 " + row.eu;
+}
+
+categorySelect.addEventListener("change", function () {
+  populateKrSelect();
+  renderTable();
+  recalc();
+});
+krSelect.addEventListener("change", recalc);
+
+populateKrSelect();
+renderTable();
+recalc();
+</script>
+</body>
+</html>

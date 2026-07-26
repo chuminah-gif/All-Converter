@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<script>
+(function () {
+  try {
+    if (localStorage.getItem("ac_lang")) return;
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/temperature.html"); }
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>온도 변환기 | 섭씨·화씨·켈빈 변환 - 올컨버터</title>
+<meta name="description" content="섭씨(°C), 화씨(°F), 켈빈(K) 온도를 서로 정확하게 변환하는 무료 계산기입니다." />
+<link rel="canonical" href="https://all-converter.vercel.app/converters/temperature.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 올컨버터</a>
+    <nav class="main-nav">
+      <a href="../index.html">홈</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="length.html">길이</a>
+          <a href="weight.html">무게</a>
+          <a href="temperature.html" class="active">온도</a>
+          <a href="speed.html">속도</a>
+          <a href="volume.html">부피</a>
+          <a href="area.html">넓이</a>
+        </div>
+      </div>
+      <a href="currency.html">환율</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">사이즈 변환 <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="shoe-size.html">신발 사이즈</a>
+          <a href="clothing-size.html">옷 사이즈</a>
+          <a href="underwear-size.html">속옷 사이즈</a>
+        </div>
+      </div>
+      <a href="timezone.html">시간대</a>
+      <a href="../guide/index.html">가이드</a>
+      <a href="../about.html">사이트소개</a>
+      <a href="../en/converters/temperature.html" class="lang-switch" data-lang="en">EN</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 온도 변환기</p>
+    <h1>온도 변환기</h1>
+    <p>섭씨·화씨·켈빈, 값을 입력하면 바로 계산됩니다.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="calc-layout">
+    <div class="card">
+      <h2>온도 변환</h2>
+      <p class="card-sub">값을 입력하고 단위를 선택하면 자동으로 변환됩니다.</p>
+      <div class="field">
+        <label for="inputValue">값 입력</label>
+        <input type="number" id="inputValue" value="0" />
+      </div>
+      <div class="convert-row">
+        <div class="field">
+          <label for="fromUnit">변환 전 단위</label>
+          <select id="fromUnit"></select>
+        </div>
+        <button type="button" class="swap-btn" id="swapBtn" aria-label="단위 바꾸기">⇄</button>
+        <div class="field">
+          <label for="toUnit">변환 후 단위</label>
+          <select id="toUnit"></select>
+        </div>
+      </div>
+      <div class="field">
+        <label>결과</label>
+        <div class="value-display" id="resultValue">-</div>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2>온도 단위 안내</h2>
+      <p>화씨(°F) = 섭씨(°C) × 9/5 + 32, 켈빈(K) = 섭씨(°C) + 273.15 공식으로 정확하게 변환됩니다.</p>
+      <table>
+        <tr><th>섭씨(°C)</th><th>화씨(°F)</th><th>켈빈(K)</th></tr>
+        <tr><td>0°C (물이 어는점)</td><td>32°F</td><td>273.15K</td></tr>
+        <tr><td>100°C (물이 끓는점)</td><td>212°F</td><td>373.15K</td></tr>
+        <tr><td>36.5°C (평균 체온)</td><td>97.7°F</td><td>309.65K</td></tr>
+        <tr><td>-40°C</td><td>-40°F</td><td>233.15K</td></tr>
+      </table>
+      <h3>참고</h3>
+      <p>미국은 일상 생활(일기예보 등)에서 화씨를 쓰기 때문에, 여행이나 유학 시 화씨 온도가 헷갈리기 쉽습니다. 켈빈은 과학·공학 분야에서 절대온도를 표기할 때 주로 사용됩니다.</p>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (Google AdSense 승인 후 게재)</div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>올컨버터</h4>
+        <p>길이·무게·온도 같은 단위부터 환율, 해외 신발·옷·속옷 사이즈, 세계 시간대까지 무료로 변환할 수 있는 정보 제공 사이트입니다.</p>
+      </div>
+      <div>
+        <h4>변환기</h4>
+        <ul>
+          <li><a href="length.html">길이 변환기</a></li>
+          <li><a href="currency.html">환율 변환기</a></li>
+          <li><a href="shoe-size.html">신발 사이즈 변환기</a></li>
+          <li><a href="timezone.html">시간대 변환기</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>사이트 정보</h4>
+        <ul>
+          <li><a href="../about.html">사이트 소개</a></li>
+          <li><a href="../guide/index.html">가이드</a></li>
+          <li><a href="../contact.html">문의하기</a></li>
+          <li><a href="../privacy.html">개인정보처리방침</a></li>
+          <li><a href="../terms.html">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 올컨버터. All rights reserved.</span>
+      <span>본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/converters.js"></script>
+<script src="../js/main.js"></script>
+<script>
+initUnitConverter({
+  units: TEMP_UNITS,
+  inputId: "inputValue",
+  fromId: "fromUnit",
+  toId: "toUnit",
+  resultId: "resultValue",
+  swapId: "swapBtn",
+  defaultFrom: "c",
+  defaultTo: "f",
+  isTemperature: true
+});
+</script>
+</body>
+</html>
