@@ -190,6 +190,94 @@ function braUsBand(krBand) {
 }
 var BRA_CUPS = ["AA", "A", "B", "C", "D", "E", "F"];
 
+/* ---------------- 데이터 용량 (기준 단위: byte) ---------------- */
+var DATA_UNITS = {
+  bit: { label: "비트(bit)", labelEn: "Bit", toBase: 0.125 },
+  byte: { label: "바이트(Byte)", labelEn: "Byte", toBase: 1 },
+  kb: { label: "킬로바이트(KB)", labelEn: "Kilobyte (KB)", toBase: 1024 },
+  mb: { label: "메가바이트(MB)", labelEn: "Megabyte (MB)", toBase: 1048576 },
+  gb: { label: "기가바이트(GB)", labelEn: "Gigabyte (GB)", toBase: 1073741824 },
+  tb: { label: "테라바이트(TB)", labelEn: "Terabyte (TB)", toBase: 1099511627776 },
+  pb: { label: "페타바이트(PB)", labelEn: "Petabyte (PB)", toBase: 1125899906842624 },
+  kbit: { label: "킬로비트(Kb)", labelEn: "Kilobit (Kb)", toBase: 128 },
+  mbit: { label: "메가비트(Mb)", labelEn: "Megabit (Mb)", toBase: 131072 },
+  gbit: { label: "기가비트(Gb)", labelEn: "Gigabit (Gb)", toBase: 134217728 }
+};
+// 1KB=1024Byte(2진 접두어) 기준입니다. 인터넷 속도(Mbps=메가비트/초)를 MB/s로 바꾸려면 8로 나누면 됩니다.
+
+/* ---------------- 요리 계량 (기준 단위: mL) ---------------- */
+var COOKING_UNITS = {
+  ml: { label: "밀리리터(mL)", labelEn: "Milliliter (mL)", toBase: 1 },
+  l: { label: "리터(L)", labelEn: "Liter (L)", toBase: 1000 },
+  krCup: { label: "계량컵/종이컵 1컵(200mL)", labelEn: "Korean measuring cup (200mL)", toBase: 200 },
+  tbsp: { label: "큰술/1T(15mL)", labelEn: "Tablespoon/1T (15mL)", toBase: 15 },
+  tsp: { label: "작은술/1t(5mL)", labelEn: "Teaspoon/1t (5mL)", toBase: 5 },
+  usCup: { label: "미국 계량컵(US cup, 236.59mL)", labelEn: "US measuring cup (236.59mL)", toBase: 236.5882365 },
+  usTbsp: { label: "미국 테이블스푼(US Tbsp, 14.79mL)", labelEn: "US Tablespoon (14.79mL)", toBase: 14.7867648 },
+  usTsp: { label: "미국 티스푼(US tsp, 4.93mL)", labelEn: "US Teaspoon (4.93mL)", toBase: 4.92892159 }
+};
+
+// 출처: 한국 계량컵(200mL)/큰술(15mL)/작은술(5mL) 표준 및 재료별 부피-무게 환산은 국내 베이킹 계량 안내 자료 교차검증(WebSearch). 다지는 정도에 따라 오차가 있어 정밀 계량은 저울 권장.
+var INGREDIENT_TABLE = {
+  flour: { label: "밀가루", labelEn: "Flour", gPerCup: 120, gPerTbsp: 8, gPerTsp: 3 },
+  sugarWhite: { label: "백설탕", labelEn: "White sugar", gPerCup: 200, gPerTbsp: 12, gPerTsp: 4 },
+  sugarBrown: { label: "흑설탕", labelEn: "Brown sugar", gPerCup: 220, gPerTbsp: 13, gPerTsp: 4 },
+  water: { label: "물", labelEn: "Water", gPerCup: 200, gPerTbsp: 15, gPerTsp: 5 }
+};
+
+/* ---------------- 반지 사이즈 ---------------- */
+// 한국 반지 호수: 내주(둘레) = 호수 + 43mm (검증된 3개 기준점: 1호=44mm, 10호=53mm, 29호=72mm, 모두 +1mm/호 일치)
+// 국제(US/UK/EU/JP) 대응표는 반지 사이즈 변환 참고자료 교차검증(WebSearch) 기준 내경(mm) 대응표.
+var RING_INTL_TABLE = [
+  { diameterMm: 14.0, us: 3, uk: "F", eu: 44, jp: 4 },
+  { diameterMm: 14.4, us: 3.5, uk: "G", eu: 45.25, jp: 5.5 },
+  { diameterMm: 14.8, us: 4, uk: "H.5", eu: 46.5, jp: 7 },
+  { diameterMm: 15.2, us: 4.5, uk: "I.5", eu: 47.75, jp: 8 },
+  { diameterMm: 15.6, us: 5, uk: "J.5", eu: 49, jp: 9 },
+  { diameterMm: 16.0, us: 5.5, uk: "L", eu: 50.75, jp: 10.5 },
+  { diameterMm: 16.5, us: 6, uk: "M", eu: 51.5, jp: 12 },
+  { diameterMm: 16.9, us: 6.5, uk: "N", eu: 52.75, jp: 13 },
+  { diameterMm: 17.3, us: 7, uk: "O", eu: 54, jp: 14 },
+  { diameterMm: 17.7, us: 7.5, uk: "P", eu: 55.25, jp: 15 },
+  { diameterMm: 18.2, us: 8, uk: "Q", eu: 56.75, jp: 16 },
+  { diameterMm: 18.6, us: 8.5, uk: "Q.5", eu: 58, jp: 17 },
+  { diameterMm: 19.0, us: 9, uk: "R.5", eu: 59.25, jp: 18 },
+  { diameterMm: 19.4, us: 9.5, uk: "S.5", eu: 60.75, jp: 19 },
+  { diameterMm: 19.8, us: 10, uk: "T.5", eu: 61.75, jp: 20 },
+  { diameterMm: 20.2, us: 10.5, uk: "U.5", eu: 62.75, jp: 22 },
+  { diameterMm: 20.6, us: 11, uk: "V.5", eu: 64.25, jp: 23 },
+  { diameterMm: 21.0, us: 11.5, uk: "W.5", eu: 66, jp: 24 },
+  { diameterMm: 21.4, us: 12, uk: "Y", eu: 67.25, jp: 25 },
+  { diameterMm: 21.8, us: 12.5, uk: "Z", eu: 68, jp: 26 },
+  { diameterMm: 22.2, us: 13, uk: "Z+1", eu: 69, jp: 27 },
+  { diameterMm: 22.6, us: 13.5, uk: "Z+1.5", eu: 71, jp: 28 }
+];
+
+var KR_RING_SIZES = [];
+for (var krSize = 3; krSize <= 27; krSize++) {
+  var circumferenceMm = krSize + 43;
+  KR_RING_SIZES.push({ kr: krSize, circumferenceMm: circumferenceMm, diameterMm: circumferenceMm / Math.PI });
+}
+
+function interpolateRingSize(diameterMm) {
+  var rows = RING_INTL_TABLE;
+  if (diameterMm <= rows[0].diameterMm) return rows[0];
+  if (diameterMm >= rows[rows.length - 1].diameterMm) return rows[rows.length - 1];
+  for (var i = 0; i < rows.length - 1; i++) {
+    var a = rows[i], b = rows[i + 1];
+    if (diameterMm >= a.diameterMm && diameterMm <= b.diameterMm) {
+      var t = (diameterMm - a.diameterMm) / (b.diameterMm - a.diameterMm);
+      return {
+        us: Math.round((a.us + t * (b.us - a.us)) * 2) / 2,
+        uk: t < 0.5 ? a.uk : b.uk,
+        eu: Math.round(a.eu + t * (b.eu - a.eu)),
+        jp: Math.round(a.jp + t * (b.jp - a.jp))
+      };
+    }
+  }
+  return rows[0];
+}
+
 /* ---------------- 시간대 변환 ---------------- */
 var TIMEZONE_LIST = [
   { key: "Asia/Seoul", label: "서울 (KST, UTC+9)", labelEn: "Seoul (KST, UTC+9)" },

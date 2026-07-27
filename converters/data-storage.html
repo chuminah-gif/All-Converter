@@ -7,16 +7,16 @@
   try {
     if (localStorage.getItem("ac_lang")) return;
     var lang = (navigator.language || "").toLowerCase();
-    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/length.html"); }
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/data-storage.html"); }
   } catch (e) {}
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-adsense-account" content="ca-pub-9392282410784308">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
-<title>길이 변환기 | cm·m·km ↔ 인치·피트·마일 - 올컨버터</title>
-<meta name="description" content="밀리미터, 센티미터, 미터, 킬로미터부터 인치, 피트, 야드, 마일까지 길이 단위를 정확하게 변환하는 무료 계산기입니다." />
-<link rel="canonical" href="https://all-converter-pearl.vercel.app/converters/length.html" />
+<title>데이터 용량 변환기 | KB·MB·GB·TB, 인터넷 속도(Mbps) 변환 - 올컨버터</title>
+<meta name="description" content="비트, 바이트, KB, MB, GB, TB부터 인터넷 속도 단위인 Kb, Mb, Gb까지 데이터 용량을 정확하게 변환하는 무료 계산기입니다." />
+<link rel="canonical" href="https://all-converter-pearl.vercel.app/converters/data-storage.html" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 <link rel="stylesheet" href="../css/style.css" />
 </head>
@@ -30,14 +30,14 @@
       <div class="nav-item">
         <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
         <div class="dropdown-menu">
-          <a href="length.html" class="active">길이</a>
+          <a href="length.html">길이</a>
           <a href="weight.html">무게</a>
           <a href="temperature.html">온도</a>
           <a href="speed.html">속도</a>
           <a href="volume.html">부피</a>
           <a href="area.html">넓이</a>
           <a href="cooking.html">요리 계량</a>
-          <a href="data-storage.html">데이터 용량</a>
+          <a href="data-storage.html" class="active">데이터 용량</a>
         </div>
       </div>
       <a href="currency.html">환율</a>
@@ -53,7 +53,7 @@
       <a href="timezone.html">시간대</a>
       <a href="../guide/index.html">가이드</a>
       <a href="../about.html">사이트소개</a>
-      <a href="../en/converters/length.html" class="lang-switch" data-lang="en">EN</a>
+      <a href="../en/converters/data-storage.html" class="lang-switch" data-lang="en">EN</a>
     </nav>
     <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
   </div>
@@ -61,16 +61,16 @@
 
 <section class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="../index.html">홈</a> / 길이 변환기</p>
-    <h1>길이 변환기</h1>
-    <p>밀리미터부터 마일까지, 값을 입력하면 바로 계산됩니다.</p>
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 데이터 용량 변환기</p>
+    <h1>데이터 용량 변환기</h1>
+    <p>비트부터 테라바이트까지, 값을 입력하면 바로 계산됩니다.</p>
   </div>
 </section>
 
 <div class="container section">
   <div class="calc-layout">
     <div class="card">
-      <h2>길이 변환</h2>
+      <h2>데이터 용량 변환</h2>
       <p class="card-sub">값을 입력하고 단위를 선택하면 자동으로 변환됩니다.</p>
       <div class="field">
         <label for="inputValue">값 입력</label>
@@ -94,20 +94,21 @@
     </div>
 
     <div class="card prose">
-      <h2>길이 단위 안내</h2>
-      <p>길이 변환은 국제적으로 정의된 고정 상수를 기준으로 계산되어 오차가 없습니다. 1인치는 정확히 2.54cm, 1마일은 정확히 1609.344m입니다.</p>
+      <h2>데이터 용량 단위 안내</h2>
+      <p>이 계산기는 1KB=1,024Byte 기준(2진 접두어)을 사용합니다. 인터넷/통신 속도는 보통 비트(Kb, Mb, Gb) 단위로 표시되는데, 파일 용량은 바이트(KB, MB, GB) 단위를 쓰기 때문에 1바이트 = 8비트로 환산해야 합니다.</p>
       <table>
-        <tr><th>단위</th><th>기준(1단위 = ? m)</th></tr>
-        <tr><td>인치(in)</td><td>0.0254 m</td></tr>
-        <tr><td>피트(ft)</td><td>0.3048 m</td></tr>
-        <tr><td>야드(yd)</td><td>0.9144 m</td></tr>
-        <tr><td>마일(mi)</td><td>1,609.344 m</td></tr>
+        <tr><th>단위</th><th>기준(1단위 = ? Byte)</th></tr>
+        <tr><td>비트(bit)</td><td>0.125 Byte</td></tr>
+        <tr><td>킬로바이트(KB)</td><td>1,024 Byte</td></tr>
+        <tr><td>메가바이트(MB)</td><td>1,048,576 Byte</td></tr>
+        <tr><td>기가바이트(GB)</td><td>1,073,741,824 Byte</td></tr>
+        <tr><td>테라바이트(TB)</td><td>1,099,511,627,776 Byte</td></tr>
       </table>
       <h3>자주 쓰는 예시</h3>
       <ul>
-        <li>1m = 39.37인치 ≈ 3.28피트</li>
-        <li>미국 사람의 키를 말할 때 흔히 쓰는 "5피트 7인치"는 약 170.18cm입니다.</li>
-        <li>마라톤 풀코스(42.195km)는 약 26.22마일입니다.</li>
+        <li>1GB = 1,024MB</li>
+        <li>인터넷 속도 "100Mbps"는 초당 최대 12.5MB/s를 의미합니다(100 ÷ 8).</li>
+        <li>스마트폰 사진 1장은 대략 3~5MB, 128GB 저장공간에는 약 25,000~40,000장을 저장할 수 있습니다.</li>
       </ul>
     </div>
   </div>
@@ -153,14 +154,14 @@
 <script src="../js/main.js"></script>
 <script>
 initUnitConverter({
-  units: LENGTH_UNITS,
+  units: DATA_UNITS,
   inputId: "inputValue",
   fromId: "fromUnit",
   toId: "toUnit",
   resultId: "resultValue",
   swapId: "swapBtn",
-  defaultFrom: "m",
-  defaultTo: "inch"
+  defaultFrom: "gb",
+  defaultTo: "mb"
 });
 </script>
 </body>

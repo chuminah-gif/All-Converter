@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-adsense-account" content="ca-pub-9392282410784308">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
-<title>Temperature Converter | Celsius, Fahrenheit, Kelvin - All Converter</title>
-<meta name="description" content="Convert between Celsius (°C), Fahrenheit (°F), and Kelvin (K) accurately with this free temperature converter." />
-<link rel="canonical" href="https://all-converter-pearl.vercel.app/en/converters/temperature.html" />
-<link rel="alternate" hreflang="ko" href="https://all-converter-pearl.vercel.app/converters/temperature.html" />
-<link rel="alternate" hreflang="en" href="https://all-converter-pearl.vercel.app/en/converters/temperature.html" />
+<title>Ring Size Converter | Korea ↔ US, UK, EU, Japan - All Converter</title>
+<meta name="description" content="Select a Korean ring size to instantly get US, UK, EU, and Japan size equivalents, plus inner diameter and circumference in mm." />
+<link rel="canonical" href="https://all-converter-pearl.vercel.app/en/converters/ring-size.html" />
+<link rel="alternate" hreflang="ko" href="https://all-converter-pearl.vercel.app/converters/ring-size.html" />
+<link rel="alternate" hreflang="en" href="https://all-converter-pearl.vercel.app/en/converters/ring-size.html" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -25,7 +25,7 @@
         <div class="dropdown-menu">
           <a href="length.html">Length</a>
           <a href="weight.html">Weight</a>
-          <a href="temperature.html" class="active">Temperature</a>
+          <a href="temperature.html">Temperature</a>
           <a href="speed.html">Speed</a>
           <a href="volume.html">Volume</a>
           <a href="area.html">Area</a>
@@ -40,13 +40,13 @@
           <a href="shoe-size.html">Shoe Size</a>
           <a href="clothing-size.html">Clothing Size</a>
           <a href="underwear-size.html">Bra Size</a>
-          <a href="ring-size.html">Ring Size</a>
+          <a href="ring-size.html" class="active">Ring Size</a>
         </div>
       </div>
       <a href="timezone.html">Time Zones</a>
       <a href="../guide/index.html">Guides</a>
       <a href="../about.html">About</a>
-      <a href="../../converters/temperature.html" class="lang-switch" data-lang="ko">KO</a>
+      <a href="../../converters/ring-size.html" class="lang-switch" data-lang="ko">KO</a>
     </nav>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
@@ -54,31 +54,20 @@
 
 <section class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="../index.html">Home</a> / Temperature Converter</p>
-    <h1>Temperature Converter</h1>
-    <p>Celsius, Fahrenheit, Kelvin — enter a value and get an instant result.</p>
+    <p class="breadcrumb"><a href="../index.html">Home</a> / Ring Size Converter</p>
+    <h1>Ring Size Converter</h1>
+    <p>Select a Korean ring size to get US, UK, EU, and Japan size equivalents instantly.</p>
   </div>
 </section>
 
 <div class="container section">
   <div class="calc-layout">
     <div class="card">
-      <h2>Convert Temperature</h2>
-      <p class="card-sub">Enter a value and choose units — the result updates automatically.</p>
+      <h2>Convert Ring Size</h2>
+      <p class="card-sub">Korean ring sizes are based on inner circumference in mm. E.g. size 14 ≈ 57mm circumference.</p>
       <div class="field">
-        <label for="inputValue">Value</label>
-        <input type="number" id="inputValue" value="0" />
-      </div>
-      <div class="convert-row">
-        <div class="field">
-          <label for="fromUnit">From</label>
-          <select id="fromUnit"></select>
-        </div>
-        <button type="button" class="swap-btn" id="swapBtn" aria-label="Swap units">⇄</button>
-        <div class="field">
-          <label for="toUnit">To</label>
-          <select id="toUnit"></select>
-        </div>
+        <label for="krRingSelect">Korean size</label>
+        <select id="krRingSelect"></select>
       </div>
       <div class="field">
         <label>Result</label>
@@ -87,17 +76,11 @@
     </div>
 
     <div class="card prose">
-      <h2>About temperature units</h2>
-      <p>°F = °C × 9/5 + 32, and K = °C + 273.15 — these exact formulas are used for every conversion.</p>
-      <table>
-        <tr><th>Celsius (°C)</th><th>Fahrenheit (°F)</th><th>Kelvin (K)</th></tr>
-        <tr><td>0°C (water freezes)</td><td>32°F</td><td>273.15K</td></tr>
-        <tr><td>100°C (water boils)</td><td>212°F</td><td>373.15K</td></tr>
-        <tr><td>36.5°C (avg. body temp)</td><td>97.7°F</td><td>309.65K</td></tr>
-        <tr><td>-40°C</td><td>-40°F</td><td>233.15K</td></tr>
-      </table>
-      <h3>Note</h3>
-      <p>The US commonly uses Fahrenheit for everyday purposes like weather forecasts, which can be confusing for visitors used to Celsius. Kelvin is mainly used in scientific and engineering contexts for absolute temperature.</p>
+      <h2>Ring Size Chart</h2>
+      <div id="tableWrap"></div>
+      <div class="info-callout">
+        Wider bands (5mm+) tend to fit more snugly, so consider sizing up by one. For an exact fit, we recommend getting measured in person at a jewelry store.
+      </div>
     </div>
   </div>
 
@@ -141,18 +124,41 @@
 <script src="../../js/converters.js"></script>
 <script src="../../js/main.js"></script>
 <script>
-initUnitConverter({
-  units: TEMP_UNITS,
-  inputId: "inputValue",
-  fromId: "fromUnit",
-  toId: "toUnit",
-  resultId: "resultValue",
-  swapId: "swapBtn",
-  defaultFrom: "c",
-  defaultTo: "f",
-  isTemperature: true,
-  lang: "en"
+var krRingSelect = document.getElementById("krRingSelect");
+var resultEl = document.getElementById("resultValue");
+var tableWrap = document.getElementById("tableWrap");
+
+KR_RING_SIZES.forEach(function (r) {
+  var opt = document.createElement("option");
+  opt.value = r.kr;
+  opt.textContent = "Size " + r.kr;
+  krRingSelect.appendChild(opt);
 });
+krRingSelect.value = 14;
+
+function recalc() {
+  var kr = parseInt(krRingSelect.value, 10);
+  var row = KR_RING_SIZES.filter(function (r) { return r.kr === kr; })[0];
+  var intl = interpolateRingSize(row.diameterMm);
+  resultEl.innerHTML = "Korea " + kr + " (diameter " + formatNumber(row.diameterMm, 1) + "mm / circumference " + row.circumferenceMm + "mm)" +
+    "<br>US " + intl.us + " &nbsp;|&nbsp; UK " + intl.uk + " &nbsp;|&nbsp; EU " + intl.eu + " &nbsp;|&nbsp; Japan " + intl.jp;
+}
+
+function renderTable() {
+  var html = "<table><tr><th>Korea</th><th>Diameter (mm)</th><th>US</th><th>UK</th><th>Japan</th></tr>";
+  [5, 8, 11, 14, 17, 20, 23, 26].forEach(function (kr) {
+    var row = KR_RING_SIZES.filter(function (r) { return r.kr === kr; })[0];
+    var intl = interpolateRingSize(row.diameterMm);
+    html += "<tr><td>" + kr + "</td><td>" + formatNumber(row.diameterMm, 1) + "</td><td>" + intl.us + "</td><td>" + intl.uk + "</td><td>" + intl.jp + "</td></tr>";
+  });
+  html += "</table>";
+  tableWrap.innerHTML = html;
+}
+
+krRingSelect.addEventListener("change", recalc);
+
+renderTable();
+recalc();
 </script>
 </body>
 </html>

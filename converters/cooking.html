@@ -7,16 +7,16 @@
   try {
     if (localStorage.getItem("ac_lang")) return;
     var lang = (navigator.language || "").toLowerCase();
-    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/length.html"); }
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/cooking.html"); }
   } catch (e) {}
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-adsense-account" content="ca-pub-9392282410784308">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
-<title>길이 변환기 | cm·m·km ↔ 인치·피트·마일 - 올컨버터</title>
-<meta name="description" content="밀리미터, 센티미터, 미터, 킬로미터부터 인치, 피트, 야드, 마일까지 길이 단위를 정확하게 변환하는 무료 계산기입니다." />
-<link rel="canonical" href="https://all-converter-pearl.vercel.app/converters/length.html" />
+<title>요리 계량 변환기 | 컵·큰술·작은술 ↔ mL, 재료 g 환산 - 올컨버터</title>
+<meta name="description" content="계량컵, 큰술(1T), 작은술(1t)을 mL로 바꾸고, 밀가루·설탕·물 같은 재료를 컵/큰술/작은술 단위에서 그램(g)으로 환산하는 무료 계산기입니다." />
+<link rel="canonical" href="https://all-converter-pearl.vercel.app/converters/cooking.html" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 <link rel="stylesheet" href="../css/style.css" />
 </head>
@@ -30,13 +30,13 @@
       <div class="nav-item">
         <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
         <div class="dropdown-menu">
-          <a href="length.html" class="active">길이</a>
+          <a href="length.html">길이</a>
           <a href="weight.html">무게</a>
           <a href="temperature.html">온도</a>
           <a href="speed.html">속도</a>
           <a href="volume.html">부피</a>
           <a href="area.html">넓이</a>
-          <a href="cooking.html">요리 계량</a>
+          <a href="cooking.html" class="active">요리 계량</a>
           <a href="data-storage.html">데이터 용량</a>
         </div>
       </div>
@@ -53,7 +53,7 @@
       <a href="timezone.html">시간대</a>
       <a href="../guide/index.html">가이드</a>
       <a href="../about.html">사이트소개</a>
-      <a href="../en/converters/length.html" class="lang-switch" data-lang="en">EN</a>
+      <a href="../en/converters/cooking.html" class="lang-switch" data-lang="en">EN</a>
     </nav>
     <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
   </div>
@@ -61,17 +61,17 @@
 
 <section class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="../index.html">홈</a> / 길이 변환기</p>
-    <h1>길이 변환기</h1>
-    <p>밀리미터부터 마일까지, 값을 입력하면 바로 계산됩니다.</p>
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 요리 계량 변환기</p>
+    <h1>요리 계량 변환기</h1>
+    <p>계량컵·큰술·작은술을 mL로, 재료 부피를 그램(g)으로 바꿔드립니다.</p>
   </div>
 </section>
 
 <div class="container section">
   <div class="calc-layout">
     <div class="card">
-      <h2>길이 변환</h2>
-      <p class="card-sub">값을 입력하고 단위를 선택하면 자동으로 변환됩니다.</p>
+      <h2>부피 단위 변환</h2>
+      <p class="card-sub">한국 계량컵은 1컵=200mL, 큰술(1T)=15mL, 작은술(1t)=5mL 기준입니다.</p>
       <div class="field">
         <label for="inputValue">값 입력</label>
         <input type="number" id="inputValue" value="1" />
@@ -94,21 +94,45 @@
     </div>
 
     <div class="card prose">
-      <h2>길이 단위 안내</h2>
-      <p>길이 변환은 국제적으로 정의된 고정 상수를 기준으로 계산되어 오차가 없습니다. 1인치는 정확히 2.54cm, 1마일은 정확히 1609.344m입니다.</p>
+      <h2>계량 단위 안내</h2>
+      <p>한국 레시피의 "1컵"은 종이컵/계량컵 기준 200mL이며, 미국 레시피의 "1 cup"은 약 236.6mL로 서로 다릅니다. 해외 레시피를 따라할 때는 어느 컵 기준인지 꼭 확인하세요.</p>
       <table>
-        <tr><th>단위</th><th>기준(1단위 = ? m)</th></tr>
-        <tr><td>인치(in)</td><td>0.0254 m</td></tr>
-        <tr><td>피트(ft)</td><td>0.3048 m</td></tr>
-        <tr><td>야드(yd)</td><td>0.9144 m</td></tr>
-        <tr><td>마일(mi)</td><td>1,609.344 m</td></tr>
+        <tr><th>단위</th><th>부피(mL)</th></tr>
+        <tr><td>계량컵/종이컵 1컵</td><td>200 mL</td></tr>
+        <tr><td>큰술(1T)</td><td>15 mL</td></tr>
+        <tr><td>작은술(1t)</td><td>5 mL</td></tr>
+        <tr><td>미국 계량컵(US cup)</td><td>236.59 mL</td></tr>
       </table>
-      <h3>자주 쓰는 예시</h3>
-      <ul>
-        <li>1m = 39.37인치 ≈ 3.28피트</li>
-        <li>미국 사람의 키를 말할 때 흔히 쓰는 "5피트 7인치"는 약 170.18cm입니다.</li>
-        <li>마라톤 풀코스(42.195km)는 약 26.22마일입니다.</li>
-      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:28px;">
+    <h2>재료 무게 환산 (컵/큰술/작은술 → g)</h2>
+    <p class="card-sub">밀가루·설탕처럼 다지는 정도에 따라 부피가 달라지는 재료는 근사값입니다. 정밀 계량이 필요하면 저울을 권장합니다.</p>
+    <div class="field-row" style="margin-bottom:18px;">
+      <div>
+        <label style="display:block; font-size:0.88rem; font-weight:700; margin-bottom:6px;" for="ingredientSelect">재료</label>
+        <select id="ingredientSelect"></select>
+      </div>
+      <div>
+        <label style="display:block; font-size:0.88rem; font-weight:700; margin-bottom:6px;" for="ingredientUnitSelect">단위</label>
+        <select id="ingredientUnitSelect">
+          <option value="cup">컵(200mL)</option>
+          <option value="tbsp">큰술(1T)</option>
+          <option value="tsp">작은술(1t)</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="ingredientAmount">수량</label>
+      <input type="number" id="ingredientAmount" value="1" step="0.1" />
+    </div>
+    <div class="field">
+      <label>결과</label>
+      <div class="value-display" id="ingredientResult">-</div>
+    </div>
+    <div class="info-callout">
+      물은 1mL=1g이므로 항상 정확합니다. 밀가루·설탕은 체에 치거나 눌러 담는 정도에 따라 실제 무게가 달라질 수 있습니다.
     </div>
   </div>
 
@@ -153,15 +177,42 @@
 <script src="../js/main.js"></script>
 <script>
 initUnitConverter({
-  units: LENGTH_UNITS,
+  units: COOKING_UNITS,
   inputId: "inputValue",
   fromId: "fromUnit",
   toId: "toUnit",
   resultId: "resultValue",
   swapId: "swapBtn",
-  defaultFrom: "m",
-  defaultTo: "inch"
+  defaultFrom: "krCup",
+  defaultTo: "ml"
 });
+
+var ingredientSelect = document.getElementById("ingredientSelect");
+var ingredientUnitSelect = document.getElementById("ingredientUnitSelect");
+var ingredientAmount = document.getElementById("ingredientAmount");
+var ingredientResult = document.getElementById("ingredientResult");
+
+Object.keys(INGREDIENT_TABLE).forEach(function (key) {
+  var opt = document.createElement("option");
+  opt.value = key;
+  opt.textContent = INGREDIENT_TABLE[key].label;
+  ingredientSelect.appendChild(opt);
+});
+
+function recalcIngredient() {
+  var amount = parseFloat(ingredientAmount.value);
+  if (isNaN(amount)) { ingredientResult.textContent = "-"; return; }
+  var ing = INGREDIENT_TABLE[ingredientSelect.value];
+  var unit = ingredientUnitSelect.value;
+  var gPerUnit = unit === "cup" ? ing.gPerCup : (unit === "tbsp" ? ing.gPerTbsp : ing.gPerTsp);
+  var grams = amount * gPerUnit;
+  ingredientResult.textContent = "약 " + formatNumber(grams, 1) + " g";
+}
+
+ingredientSelect.addEventListener("change", recalcIngredient);
+ingredientUnitSelect.addEventListener("change", recalcIngredient);
+ingredientAmount.addEventListener("input", recalcIngredient);
+recalcIngredient();
 </script>
 </body>
 </html>

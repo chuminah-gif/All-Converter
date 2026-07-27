@@ -11,6 +11,9 @@
   <url><loc>https://all-converter-pearl.vercel.app/converters/shoe-size.html</loc><priority>0.9</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/converters/clothing-size.html</loc><priority>0.9</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/converters/underwear-size.html</loc><priority>0.9</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/converters/ring-size.html</loc><priority>0.9</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/converters/cooking.html</loc><priority>0.9</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/converters/data-storage.html</loc><priority>0.9</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/converters/timezone.html</loc><priority>0.9</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/guide/index.html</loc><priority>0.8</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/guide/currency-guide.html</loc><priority>0.7</priority></url>
@@ -32,6 +35,9 @@
   <url><loc>https://all-converter-pearl.vercel.app/en/converters/shoe-size.html</loc><priority>0.9</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/converters/clothing-size.html</loc><priority>0.9</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/converters/underwear-size.html</loc><priority>0.9</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/en/converters/ring-size.html</loc><priority>0.9</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/en/converters/cooking.html</loc><priority>0.9</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/en/converters/data-storage.html</loc><priority>0.9</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/converters/timezone.html</loc><priority>0.9</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/guide/index.html</loc><priority>0.8</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/guide/currency-guide.html</loc><priority>0.7</priority></url>

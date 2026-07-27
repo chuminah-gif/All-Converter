@@ -7,16 +7,16 @@
   try {
     if (localStorage.getItem("ac_lang")) return;
     var lang = (navigator.language || "").toLowerCase();
-    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/length.html"); }
+    if (lang.indexOf("ko") !== 0) { window.location.replace("../en/converters/ring-size.html"); }
   } catch (e) {}
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-adsense-account" content="ca-pub-9392282410784308">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
-<title>길이 변환기 | cm·m·km ↔ 인치·피트·마일 - 올컨버터</title>
-<meta name="description" content="밀리미터, 센티미터, 미터, 킬로미터부터 인치, 피트, 야드, 마일까지 길이 단위를 정확하게 변환하는 무료 계산기입니다." />
-<link rel="canonical" href="https://all-converter-pearl.vercel.app/converters/length.html" />
+<title>반지 사이즈 변환기 | 한국 호수 ↔ 미국·영국·유럽·일본 - 올컨버터</title>
+<meta name="description" content="한국 반지 호수를 선택하면 미국(US), 영국(UK), 유럽(EU), 일본 사이즈와 내경(mm)·둘레(mm)까지 계산해주는 무료 계산기입니다." />
+<link rel="canonical" href="https://all-converter-pearl.vercel.app/converters/ring-size.html" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 <link rel="stylesheet" href="../css/style.css" />
 </head>
@@ -30,7 +30,7 @@
       <div class="nav-item">
         <button type="button" class="dropdown-toggle">단위 변환 <span class="caret">▾</span></button>
         <div class="dropdown-menu">
-          <a href="length.html" class="active">길이</a>
+          <a href="length.html">길이</a>
           <a href="weight.html">무게</a>
           <a href="temperature.html">온도</a>
           <a href="speed.html">속도</a>
@@ -47,13 +47,13 @@
           <a href="shoe-size.html">신발 사이즈</a>
           <a href="clothing-size.html">옷 사이즈</a>
           <a href="underwear-size.html">속옷 사이즈</a>
-          <a href="ring-size.html">반지 사이즈</a>
+          <a href="ring-size.html" class="active">반지 사이즈</a>
         </div>
       </div>
       <a href="timezone.html">시간대</a>
       <a href="../guide/index.html">가이드</a>
       <a href="../about.html">사이트소개</a>
-      <a href="../en/converters/length.html" class="lang-switch" data-lang="en">EN</a>
+      <a href="../en/converters/ring-size.html" class="lang-switch" data-lang="en">EN</a>
     </nav>
     <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
   </div>
@@ -61,31 +61,20 @@
 
 <section class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="../index.html">홈</a> / 길이 변환기</p>
-    <h1>길이 변환기</h1>
-    <p>밀리미터부터 마일까지, 값을 입력하면 바로 계산됩니다.</p>
+    <p class="breadcrumb"><a href="../index.html">홈</a> / 반지 사이즈 변환기</p>
+    <h1>반지 사이즈 변환기</h1>
+    <p>한국 반지 호수를 선택하면 미국·영국·유럽·일본 사이즈를 바로 알려드립니다.</p>
   </div>
 </section>
 
 <div class="container section">
   <div class="calc-layout">
     <div class="card">
-      <h2>길이 변환</h2>
-      <p class="card-sub">값을 입력하고 단위를 선택하면 자동으로 변환됩니다.</p>
+      <h2>반지 사이즈 변환</h2>
+      <p class="card-sub">한국 반지 호수는 내경 둘레(mm)를 기준으로 매겨집니다. 예: 14호 = 둘레 약 57mm</p>
       <div class="field">
-        <label for="inputValue">값 입력</label>
-        <input type="number" id="inputValue" value="1" />
-      </div>
-      <div class="convert-row">
-        <div class="field">
-          <label for="fromUnit">변환 전 단위</label>
-          <select id="fromUnit"></select>
-        </div>
-        <button type="button" class="swap-btn" id="swapBtn" aria-label="단위 바꾸기">⇄</button>
-        <div class="field">
-          <label for="toUnit">변환 후 단위</label>
-          <select id="toUnit"></select>
-        </div>
+        <label for="krRingSelect">한국 호수</label>
+        <select id="krRingSelect"></select>
       </div>
       <div class="field">
         <label>결과</label>
@@ -94,21 +83,11 @@
     </div>
 
     <div class="card prose">
-      <h2>길이 단위 안내</h2>
-      <p>길이 변환은 국제적으로 정의된 고정 상수를 기준으로 계산되어 오차가 없습니다. 1인치는 정확히 2.54cm, 1마일은 정확히 1609.344m입니다.</p>
-      <table>
-        <tr><th>단위</th><th>기준(1단위 = ? m)</th></tr>
-        <tr><td>인치(in)</td><td>0.0254 m</td></tr>
-        <tr><td>피트(ft)</td><td>0.3048 m</td></tr>
-        <tr><td>야드(yd)</td><td>0.9144 m</td></tr>
-        <tr><td>마일(mi)</td><td>1,609.344 m</td></tr>
-      </table>
-      <h3>자주 쓰는 예시</h3>
-      <ul>
-        <li>1m = 39.37인치 ≈ 3.28피트</li>
-        <li>미국 사람의 키를 말할 때 흔히 쓰는 "5피트 7인치"는 약 170.18cm입니다.</li>
-        <li>마라톤 풀코스(42.195km)는 약 26.22마일입니다.</li>
-      </ul>
+      <h2>반지 사이즈 환산표</h2>
+      <div id="tableWrap"></div>
+      <div class="info-callout">
+        브랜드/디자인에 따라 반지 폭이 넓으면(5mm 이상) 실제 착용감이 더 꽉 낄 수 있어 한 호수 크게 선택하는 것이 좋습니다. 정확한 사이즈가 중요하다면 매장에서 직접 측정하는 것을 권장합니다.
+      </div>
     </div>
   </div>
 
@@ -152,16 +131,41 @@
 <script src="../js/converters.js"></script>
 <script src="../js/main.js"></script>
 <script>
-initUnitConverter({
-  units: LENGTH_UNITS,
-  inputId: "inputValue",
-  fromId: "fromUnit",
-  toId: "toUnit",
-  resultId: "resultValue",
-  swapId: "swapBtn",
-  defaultFrom: "m",
-  defaultTo: "inch"
+var krRingSelect = document.getElementById("krRingSelect");
+var resultEl = document.getElementById("resultValue");
+var tableWrap = document.getElementById("tableWrap");
+
+KR_RING_SIZES.forEach(function (r) {
+  var opt = document.createElement("option");
+  opt.value = r.kr;
+  opt.textContent = r.kr + "호";
+  krRingSelect.appendChild(opt);
 });
+krRingSelect.value = 14;
+
+function recalc() {
+  var kr = parseInt(krRingSelect.value, 10);
+  var row = KR_RING_SIZES.filter(function (r) { return r.kr === kr; })[0];
+  var intl = interpolateRingSize(row.diameterMm);
+  resultEl.innerHTML = "한국 " + kr + "호 (내경 " + formatNumber(row.diameterMm, 1) + "mm / 둘레 " + row.circumferenceMm + "mm)" +
+    "<br>미국 " + intl.us + " &nbsp;|&nbsp; 영국 " + intl.uk + " &nbsp;|&nbsp; 유럽 " + intl.eu + " &nbsp;|&nbsp; 일본 " + intl.jp + "호";
+}
+
+function renderTable() {
+  var html = "<table><tr><th>한국(호)</th><th>내경(mm)</th><th>미국</th><th>영국</th><th>일본</th></tr>";
+  [5, 8, 11, 14, 17, 20, 23, 26].forEach(function (kr) {
+    var row = KR_RING_SIZES.filter(function (r) { return r.kr === kr; })[0];
+    var intl = interpolateRingSize(row.diameterMm);
+    html += "<tr><td>" + kr + "호</td><td>" + formatNumber(row.diameterMm, 1) + "</td><td>" + intl.us + "</td><td>" + intl.uk + "</td><td>" + intl.jp + "호</td></tr>";
+  });
+  html += "</table>";
+  tableWrap.innerHTML = html;
+}
+
+krRingSelect.addEventListener("change", recalc);
+
+renderTable();
+recalc();
 </script>
 </body>
 </html>

@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-adsense-account" content="ca-pub-9392282410784308">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
-<title>Temperature Converter | Celsius, Fahrenheit, Kelvin - All Converter</title>
-<meta name="description" content="Convert between Celsius (°C), Fahrenheit (°F), and Kelvin (K) accurately with this free temperature converter." />
-<link rel="canonical" href="https://all-converter-pearl.vercel.app/en/converters/temperature.html" />
-<link rel="alternate" hreflang="ko" href="https://all-converter-pearl.vercel.app/converters/temperature.html" />
-<link rel="alternate" hreflang="en" href="https://all-converter-pearl.vercel.app/en/converters/temperature.html" />
+<title>Cooking Measurement Converter | Cups, Tablespoons, Teaspoons to mL & Grams - All Converter</title>
+<meta name="description" content="Convert cups, tablespoons, and teaspoons to milliliters, and convert common ingredients like flour, sugar, and water from cups/tablespoons/teaspoons to grams." />
+<link rel="canonical" href="https://all-converter-pearl.vercel.app/en/converters/cooking.html" />
+<link rel="alternate" hreflang="ko" href="https://all-converter-pearl.vercel.app/converters/cooking.html" />
+<link rel="alternate" hreflang="en" href="https://all-converter-pearl.vercel.app/en/converters/cooking.html" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -25,11 +25,11 @@
         <div class="dropdown-menu">
           <a href="length.html">Length</a>
           <a href="weight.html">Weight</a>
-          <a href="temperature.html" class="active">Temperature</a>
+          <a href="temperature.html">Temperature</a>
           <a href="speed.html">Speed</a>
           <a href="volume.html">Volume</a>
           <a href="area.html">Area</a>
-          <a href="cooking.html">Cooking Measurements</a>
+          <a href="cooking.html" class="active">Cooking Measurements</a>
           <a href="data-storage.html">Data Storage</a>
         </div>
       </div>
@@ -46,7 +46,7 @@
       <a href="timezone.html">Time Zones</a>
       <a href="../guide/index.html">Guides</a>
       <a href="../about.html">About</a>
-      <a href="../../converters/temperature.html" class="lang-switch" data-lang="ko">KO</a>
+      <a href="../../converters/cooking.html" class="lang-switch" data-lang="ko">KO</a>
     </nav>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
@@ -54,20 +54,20 @@
 
 <section class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="../index.html">Home</a> / Temperature Converter</p>
-    <h1>Temperature Converter</h1>
-    <p>Celsius, Fahrenheit, Kelvin — enter a value and get an instant result.</p>
+    <p class="breadcrumb"><a href="../index.html">Home</a> / Cooking Measurement Converter</p>
+    <h1>Cooking Measurement Converter</h1>
+    <p>Convert cups, tablespoons, and teaspoons to mL, or ingredient volume to grams.</p>
   </div>
 </section>
 
 <div class="container section">
   <div class="calc-layout">
     <div class="card">
-      <h2>Convert Temperature</h2>
-      <p class="card-sub">Enter a value and choose units — the result updates automatically.</p>
+      <h2>Convert Volume</h2>
+      <p class="card-sub">A Korean measuring cup is 200mL, a tablespoon (1T) is 15mL, and a teaspoon (1t) is 5mL.</p>
       <div class="field">
         <label for="inputValue">Value</label>
-        <input type="number" id="inputValue" value="0" />
+        <input type="number" id="inputValue" value="1" />
       </div>
       <div class="convert-row">
         <div class="field">
@@ -87,17 +87,45 @@
     </div>
 
     <div class="card prose">
-      <h2>About temperature units</h2>
-      <p>°F = °C × 9/5 + 32, and K = °C + 273.15 — these exact formulas are used for every conversion.</p>
+      <h2>About measuring units</h2>
+      <p>A Korean recipe's "1 cup" is 200mL, while a US recipe's "1 cup" is about 236.6mL — always check which convention a recipe is using before you convert.</p>
       <table>
-        <tr><th>Celsius (°C)</th><th>Fahrenheit (°F)</th><th>Kelvin (K)</th></tr>
-        <tr><td>0°C (water freezes)</td><td>32°F</td><td>273.15K</td></tr>
-        <tr><td>100°C (water boils)</td><td>212°F</td><td>373.15K</td></tr>
-        <tr><td>36.5°C (avg. body temp)</td><td>97.7°F</td><td>309.65K</td></tr>
-        <tr><td>-40°C</td><td>-40°F</td><td>233.15K</td></tr>
+        <tr><th>Unit</th><th>Volume (mL)</th></tr>
+        <tr><td>Korean measuring cup</td><td>200 mL</td></tr>
+        <tr><td>Tablespoon (1T)</td><td>15 mL</td></tr>
+        <tr><td>Teaspoon (1t)</td><td>5 mL</td></tr>
+        <tr><td>US measuring cup</td><td>236.59 mL</td></tr>
       </table>
-      <h3>Note</h3>
-      <p>The US commonly uses Fahrenheit for everyday purposes like weather forecasts, which can be confusing for visitors used to Celsius. Kelvin is mainly used in scientific and engineering contexts for absolute temperature.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:28px;">
+    <h2>Ingredient Weight Converter (cup/tbsp/tsp → g)</h2>
+    <p class="card-sub">Ingredients like flour and sugar vary by how they're packed, so these are approximate — use a kitchen scale for precise baking.</p>
+    <div class="field-row" style="margin-bottom:18px;">
+      <div>
+        <label style="display:block; font-size:0.88rem; font-weight:700; margin-bottom:6px;" for="ingredientSelect">Ingredient</label>
+        <select id="ingredientSelect"></select>
+      </div>
+      <div>
+        <label style="display:block; font-size:0.88rem; font-weight:700; margin-bottom:6px;" for="ingredientUnitSelect">Unit</label>
+        <select id="ingredientUnitSelect">
+          <option value="cup">Cup (200mL)</option>
+          <option value="tbsp">Tablespoon (1T)</option>
+          <option value="tsp">Teaspoon (1t)</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label for="ingredientAmount">Amount</label>
+      <input type="number" id="ingredientAmount" value="1" step="0.1" />
+    </div>
+    <div class="field">
+      <label>Result</label>
+      <div class="value-display" id="ingredientResult">-</div>
+    </div>
+    <div class="info-callout">
+      Water is always exact (1mL = 1g). Flour and sugar weights can vary depending on how tightly they're packed.
     </div>
   </div>
 
@@ -142,17 +170,43 @@
 <script src="../../js/main.js"></script>
 <script>
 initUnitConverter({
-  units: TEMP_UNITS,
+  units: COOKING_UNITS,
   inputId: "inputValue",
   fromId: "fromUnit",
   toId: "toUnit",
   resultId: "resultValue",
   swapId: "swapBtn",
-  defaultFrom: "c",
-  defaultTo: "f",
-  isTemperature: true,
+  defaultFrom: "krCup",
+  defaultTo: "ml",
   lang: "en"
 });
+
+var ingredientSelect = document.getElementById("ingredientSelect");
+var ingredientUnitSelect = document.getElementById("ingredientUnitSelect");
+var ingredientAmount = document.getElementById("ingredientAmount");
+var ingredientResult = document.getElementById("ingredientResult");
+
+Object.keys(INGREDIENT_TABLE).forEach(function (key) {
+  var opt = document.createElement("option");
+  opt.value = key;
+  opt.textContent = INGREDIENT_TABLE[key].labelEn;
+  ingredientSelect.appendChild(opt);
+});
+
+function recalcIngredient() {
+  var amount = parseFloat(ingredientAmount.value);
+  if (isNaN(amount)) { ingredientResult.textContent = "-"; return; }
+  var ing = INGREDIENT_TABLE[ingredientSelect.value];
+  var unit = ingredientUnitSelect.value;
+  var gPerUnit = unit === "cup" ? ing.gPerCup : (unit === "tbsp" ? ing.gPerTbsp : ing.gPerTsp);
+  var grams = amount * gPerUnit;
+  ingredientResult.textContent = "approx. " + formatNumber(grams, 1) + " g";
+}
+
+ingredientSelect.addEventListener("change", recalcIngredient);
+ingredientUnitSelect.addEventListener("change", recalcIngredient);
+ingredientAmount.addEventListener("input", recalcIngredient);
+recalcIngredient();
 </script>
 </body>
 </html>

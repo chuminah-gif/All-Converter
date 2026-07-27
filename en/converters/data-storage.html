@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="google-adsense-account" content="ca-pub-9392282410784308">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
-<title>Temperature Converter | Celsius, Fahrenheit, Kelvin - All Converter</title>
-<meta name="description" content="Convert between Celsius (°C), Fahrenheit (°F), and Kelvin (K) accurately with this free temperature converter." />
-<link rel="canonical" href="https://all-converter-pearl.vercel.app/en/converters/temperature.html" />
-<link rel="alternate" hreflang="ko" href="https://all-converter-pearl.vercel.app/converters/temperature.html" />
-<link rel="alternate" hreflang="en" href="https://all-converter-pearl.vercel.app/en/converters/temperature.html" />
+<title>Data Storage Converter | KB, MB, GB, TB & Internet Speed (Mbps) - All Converter</title>
+<meta name="description" content="Convert bits, bytes, KB, MB, GB, and TB, plus internet speed units like Kb, Mb, and Gb, with this free, accurate data storage converter." />
+<link rel="canonical" href="https://all-converter-pearl.vercel.app/en/converters/data-storage.html" />
+<link rel="alternate" hreflang="ko" href="https://all-converter-pearl.vercel.app/converters/data-storage.html" />
+<link rel="alternate" hreflang="en" href="https://all-converter-pearl.vercel.app/en/converters/data-storage.html" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
 <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -25,12 +25,12 @@
         <div class="dropdown-menu">
           <a href="length.html">Length</a>
           <a href="weight.html">Weight</a>
-          <a href="temperature.html" class="active">Temperature</a>
+          <a href="temperature.html">Temperature</a>
           <a href="speed.html">Speed</a>
           <a href="volume.html">Volume</a>
           <a href="area.html">Area</a>
           <a href="cooking.html">Cooking Measurements</a>
-          <a href="data-storage.html">Data Storage</a>
+          <a href="data-storage.html" class="active">Data Storage</a>
         </div>
       </div>
       <a href="currency.html">Currency</a>
@@ -46,7 +46,7 @@
       <a href="timezone.html">Time Zones</a>
       <a href="../guide/index.html">Guides</a>
       <a href="../about.html">About</a>
-      <a href="../../converters/temperature.html" class="lang-switch" data-lang="ko">KO</a>
+      <a href="../../converters/data-storage.html" class="lang-switch" data-lang="ko">KO</a>
     </nav>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
@@ -54,20 +54,20 @@
 
 <section class="page-hero">
   <div class="container">
-    <p class="breadcrumb"><a href="../index.html">Home</a> / Temperature Converter</p>
-    <h1>Temperature Converter</h1>
-    <p>Celsius, Fahrenheit, Kelvin — enter a value and get an instant result.</p>
+    <p class="breadcrumb"><a href="../index.html">Home</a> / Data Storage Converter</p>
+    <h1>Data Storage Converter</h1>
+    <p>From bits to terabytes — enter a value and get an instant result.</p>
   </div>
 </section>
 
 <div class="container section">
   <div class="calc-layout">
     <div class="card">
-      <h2>Convert Temperature</h2>
+      <h2>Convert Data Storage</h2>
       <p class="card-sub">Enter a value and choose units — the result updates automatically.</p>
       <div class="field">
         <label for="inputValue">Value</label>
-        <input type="number" id="inputValue" value="0" />
+        <input type="number" id="inputValue" value="1" />
       </div>
       <div class="convert-row">
         <div class="field">
@@ -87,17 +87,22 @@
     </div>
 
     <div class="card prose">
-      <h2>About temperature units</h2>
-      <p>°F = °C × 9/5 + 32, and K = °C + 273.15 — these exact formulas are used for every conversion.</p>
+      <h2>About data storage units</h2>
+      <p>This calculator uses binary prefixes (1KB = 1,024 Byte). Internet/network speeds are usually shown in bits (Kb, Mb, Gb), while file sizes use bytes (KB, MB, GB) — remember that 1 byte = 8 bits when comparing the two.</p>
       <table>
-        <tr><th>Celsius (°C)</th><th>Fahrenheit (°F)</th><th>Kelvin (K)</th></tr>
-        <tr><td>0°C (water freezes)</td><td>32°F</td><td>273.15K</td></tr>
-        <tr><td>100°C (water boils)</td><td>212°F</td><td>373.15K</td></tr>
-        <tr><td>36.5°C (avg. body temp)</td><td>97.7°F</td><td>309.65K</td></tr>
-        <tr><td>-40°C</td><td>-40°F</td><td>233.15K</td></tr>
+        <tr><th>Unit</th><th>Equals (in bytes)</th></tr>
+        <tr><td>Bit</td><td>0.125 Byte</td></tr>
+        <tr><td>Kilobyte (KB)</td><td>1,024 Byte</td></tr>
+        <tr><td>Megabyte (MB)</td><td>1,048,576 Byte</td></tr>
+        <tr><td>Gigabyte (GB)</td><td>1,073,741,824 Byte</td></tr>
+        <tr><td>Terabyte (TB)</td><td>1,099,511,627,776 Byte</td></tr>
       </table>
-      <h3>Note</h3>
-      <p>The US commonly uses Fahrenheit for everyday purposes like weather forecasts, which can be confusing for visitors used to Celsius. Kelvin is mainly used in scientific and engineering contexts for absolute temperature.</p>
+      <h3>Common examples</h3>
+      <ul>
+        <li>1GB = 1,024MB</li>
+        <li>A "100Mbps" internet plan tops out around 12.5MB/s (100 ÷ 8).</li>
+        <li>A smartphone photo is roughly 3-5MB, so a 128GB phone can hold about 25,000-40,000 photos.</li>
+      </ul>
     </div>
   </div>
 
@@ -142,15 +147,14 @@
 <script src="../../js/main.js"></script>
 <script>
 initUnitConverter({
-  units: TEMP_UNITS,
+  units: DATA_UNITS,
   inputId: "inputValue",
   fromId: "fromUnit",
   toId: "toUnit",
   resultId: "resultValue",
   swapId: "swapBtn",
-  defaultFrom: "c",
-  defaultTo: "f",
-  isTemperature: true,
+  defaultFrom: "gb",
+  defaultTo: "mb",
   lang: "en"
 });
 </script>
