@@ -20,6 +20,9 @@
   <url><loc>https://all-converter-pearl.vercel.app/guide/shoe-size-guide.html</loc><priority>0.7</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/guide/timezone-guide.html</loc><priority>0.7</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/guide/clothing-size-guide.html</loc><priority>0.7</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/guide/cooking-guide.html</loc><priority>0.7</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/guide/ring-size-guide.html</loc><priority>0.7</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/guide/underwear-size-guide.html</loc><priority>0.7</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/about.html</loc><priority>0.5</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/contact.html</loc><priority>0.4</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/privacy.html</loc><priority>0.3</priority></url>
@@ -44,6 +47,9 @@
   <url><loc>https://all-converter-pearl.vercel.app/en/guide/shoe-size-guide.html</loc><priority>0.7</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/guide/timezone-guide.html</loc><priority>0.7</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/guide/clothing-size-guide.html</loc><priority>0.7</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/en/guide/cooking-guide.html</loc><priority>0.7</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/en/guide/ring-size-guide.html</loc><priority>0.7</priority></url>
+  <url><loc>https://all-converter-pearl.vercel.app/en/guide/underwear-size-guide.html</loc><priority>0.7</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/about.html</loc><priority>0.5</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/contact.html</loc><priority>0.4</priority></url>
   <url><loc>https://all-converter-pearl.vercel.app/en/privacy.html</loc><priority>0.3</priority></url>
