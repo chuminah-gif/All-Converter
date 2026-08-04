@@ -770,13 +770,15 @@ h1, h2, h3, h4 {
   background: var(--color-bg);
 }
 
-/* 3열 테이블 중 둘째/셋째 열 내용이 둘 다 길어 auto 레이아웃이 가운데 열을 지나치게 좁게 잡는 경우용 (예: 시차 표) */
+/* KO 시차 표: auto 레이아웃이 가운데 열(표준시차)을 지나치게 좁게 잡아 짧은 문구도 여러 줄로 쪼개지는 문제 보정.
+   가로 스크롤 없이 기존 컨테이너 폭 안에서만 재배분되도록 값을 맞춤 (EN판은 문구가 훨씬 길어 같은 폭 안에서
+   가운데 열을 늘리면 반드시 셋째 열이 더 좁아지며 악화되므로 이 보정을 적용하지 않음 — en/guide/timezone-guide.html 참고). */
 .timezone-table th:nth-child(2), .timezone-table td:nth-child(2) {
-  min-width: 6.5em;
+  min-width: 4.8em;
 }
 
 .timezone-table th:nth-child(3), .timezone-table td:nth-child(3) {
-  min-width: 7.5em;
+  min-width: 6.1em;
 }
 
 .info-callout {
