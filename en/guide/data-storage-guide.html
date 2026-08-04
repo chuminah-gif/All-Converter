@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-9392282410784308">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9392282410784308" crossorigin="anonymous"></script>
+<title>KB, MB, GB, TB Explained | Why Your Storage Shows Less Than Advertised - All Converter</title>
+<meta name="description" content="How KB, MB, GB, and TB relate to each other, why a purchased drive shows less space than advertised, and the difference between bits and bytes." />
+<link rel="canonical" href="https://all-converter-pearl.vercel.app/en/guide/data-storage-guide.html" />
+<link rel="alternate" hreflang="ko" href="https://all-converter-pearl.vercel.app/guide/data-storage-guide.html" />
+<link rel="alternate" hreflang="en" href="https://all-converter-pearl.vercel.app/en/guide/data-storage-guide.html" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12H23M23 12L18 7M23 12L18 17" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 20H9M9 20L14 15M9 20L14 25" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> All Converter</a>
+    <nav class="main-nav">
+      <a href="../index.html">Home</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">Unit Converters <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="../converters/length.html">Length</a>
+          <a href="../converters/weight.html">Weight</a>
+          <a href="../converters/temperature.html">Temperature</a>
+          <a href="../converters/speed.html">Speed</a>
+          <a href="../converters/volume.html">Volume</a>
+          <a href="../converters/area.html">Area</a>
+          <a href="../converters/cooking.html">Cooking Measurements</a>
+          <a href="../converters/data-storage.html">Data Storage</a>
+        </div>
+      </div>
+      <a href="../converters/currency.html">Currency</a>
+      <div class="nav-item">
+        <button type="button" class="dropdown-toggle">Size Converters <span class="caret">▾</span></button>
+        <div class="dropdown-menu">
+          <a href="../converters/shoe-size.html">Shoe Size</a>
+          <a href="../converters/clothing-size.html">Clothing Size</a>
+          <a href="../converters/underwear-size.html">Bra Size</a>
+          <a href="../converters/ring-size.html">Ring Size</a>
+        </div>
+      </div>
+      <a href="../converters/timezone.html">Time Zones</a>
+      <a href="index.html" class="active">Guides</a>
+      <a href="../about.html">About</a>
+      <a href="../../guide/data-storage-guide.html" class="lang-switch" data-lang="ko">KO</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Guides</a> / Data Storage</p>
+    <h1>KB, MB, GB, TB Explained</h1>
+    <p>How data storage units relate to each other, and why your storage device shows less space than what's printed on the box.</p>
+  </div>
+</section>
+
+<div class="container section">
+  <div class="card prose">
+
+    <h2>How KB, MB, GB, and TB Relate</h2>
+    <p>Data storage units scale by <strong>1,024 (2¹⁰)</strong>, not 1,000, because computers work in binary internally. This site's data storage converter uses the same 1,024-based scale that computers actually calculate with.</p>
+    <table>
+      <tr><th>Unit</th><th>Equal to</th></tr>
+      <tr><td>1 KB (kilobyte)</td><td>1,024 bytes</td></tr>
+      <tr><td>1 MB (megabyte)</td><td>1,024 KB</td></tr>
+      <tr><td>1 GB (gigabyte)</td><td>1,024 MB</td></tr>
+      <tr><td>1 TB (terabyte)</td><td>1,024 GB</td></tr>
+    </table>
+
+    <h2>"I bought 128GB — why does it show 118GB?"</h2>
+    <p>Phones, SSDs, and other storage devices often report noticeably less usable space than the number printed on the box. That's not a defect — it comes down to <strong>which base is being used</strong>.</p>
+    <ul>
+      <li><strong>Storage manufacturers</strong> typically advertise capacity using 1GB = 1,000MB (a decimal, base-1,000 count) for marketing.</li>
+      <li><strong>Operating systems</strong> (Windows, Android, etc.) calculate and display capacity using 1GB = 1,024MB (binary, base-1,024).</li>
+    </ul>
+    <p>The exact same 128,000,000,000 bytes reads as "128GB" under the decimal convention but only about 119.2GB once divided using the binary convention. The gap between the two grows as capacity increases, which is why it feels especially large on terabyte-class drives.</p>
+
+    <h2>Bits and Bytes Are Not the Same</h2>
+    <p>Internet plan "speed" and file "size" are quoted in different units.</p>
+    <ul>
+      <li><strong>Internet speed</strong>: quoted in Mbps (megabits per second)</li>
+      <li><strong>File size</strong>: quoted in MB (megabytes)</li>
+    </ul>
+    <p>Since <strong>1 byte = 8 bits</strong>, a "100Mbps" connection tops out at 100 ÷ 8 = 12.5MB per second in actual download speed. Mixing up bits and bytes is one of the most common reasons a connection feels slower than its advertised speed.</p>
+
+    <div class="info-callout">
+      Convert between bits, bytes, KB, MB, GB, TB, PB, and internet speed (Mbps) all in one place with the <a href="../converters/data-storage.html">Data Storage Converter</a>.
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <h3>Q. What are KiB and MiB — I've seen those too.</h3>
+    <p>KiB (kibibyte) and MiB (mebibyte) are the official international units created specifically to mean the binary, 1,024-based count without ambiguity. In practice, though, the computing industry still mostly uses "KB" and "MB" to mean the 1,024-based values by convention.</p>
+    <h3>Q. Roughly how big is one photo, or one movie file?</h3>
+    <p>A smartphone photo is typically around 2–5MB depending on resolution, and a compressed HD movie is often somewhere around 1.5–4GB. Actual file size varies a lot with resolution, compression, and the device that captured it.</p>
+    <h3>Q. Do cloud storage plans use the same GB?</h3>
+    <p>Most cloud services also quote GB and TB, but whether they use the 1,000-based or 1,024-based convention can differ by provider, so check your specific service's documentation for the exact usable capacity.</p>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>All Converter</h4>
+        <p>A free tool for converting units (including cooking measurements and data storage), currency, international shoe/clothing/bra/ring sizes, and world time zones.</p>
+      </div>
+      <div>
+        <h4>Converters</h4>
+        <ul>
+          <li><a href="../converters/length.html">Length Converter</a></li>
+          <li><a href="../converters/currency.html">Currency Converter</a></li>
+          <li><a href="../converters/shoe-size.html">Shoe Size Converter</a></li>
+          <li><a href="../converters/timezone.html">Time Zone Converter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="index.html">Guides</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 All Converter. All rights reserved.</span>
+      <span>Results are for reference only and have no legal effect.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>
