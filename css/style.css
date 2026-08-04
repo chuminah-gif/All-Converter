@@ -770,15 +770,32 @@ h1, h2, h3, h4 {
   background: var(--color-bg);
 }
 
-/* KO 시차 표: auto 레이아웃이 가운데 열(표준시차)을 지나치게 좁게 잡아 짧은 문구도 여러 줄로 쪼개지는 문제 보정.
-   가로 스크롤 없이 기존 컨테이너 폭 안에서만 재배분되도록 값을 맞춤 (EN판은 문구가 훨씬 길어 같은 폭 안에서
-   가운데 열을 늘리면 반드시 셋째 열이 더 좁아지며 악화되므로 이 보정을 적용하지 않음 — en/guide/timezone-guide.html 참고). */
+/* 시차 표: 첫 열(도시명)의 공용 8.5em 최소폭이 실제 필요한 것보다 훨씬 넓어서, 남은 폭이 부족해진
+   auto 레이아웃이 가운데 열(표준시차)을 지나치게 좁게 잡아 짧은 문구도 여러 줄로 쪼개지던 문제 보정.
+   첫 열도 실제 도시명 길이에 맞게 좁혀서 확보한 여유를 둘째/셋째 열에 재배분 — 컨테이너 폭 안에서만
+   재배분되도록(가로 스크롤 없이) 값을 맞춤. KO/EN 문구 길이가 달라 각각 다른 값 필요. */
+.prose table.timezone-table th:first-child, .prose table.timezone-table td:first-child {
+  min-width: 6.8em;
+}
+
 .timezone-table th:nth-child(2), .timezone-table td:nth-child(2) {
-  min-width: 4.8em;
+  min-width: 6.2em;
 }
 
 .timezone-table th:nth-child(3), .timezone-table td:nth-child(3) {
-  min-width: 6.1em;
+  min-width: 6.3em;
+}
+
+.prose table.timezone-table-en th:first-child, .prose table.timezone-table-en td:first-child {
+  min-width: 7.1em;
+}
+
+.timezone-table-en th:nth-child(2), .timezone-table-en td:nth-child(2) {
+  min-width: 5em;
+}
+
+.timezone-table-en th:nth-child(3), .timezone-table-en td:nth-child(3) {
+  min-width: 7em;
 }
 
 .info-callout {
