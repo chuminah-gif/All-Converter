@@ -770,6 +770,15 @@ h1, h2, h3, h4 {
   background: var(--color-bg);
 }
 
+/* 3열 테이블 중 둘째/셋째 열 내용이 둘 다 길어 auto 레이아웃이 가운데 열을 지나치게 좁게 잡는 경우용 (예: 시차 표) */
+.timezone-table th:nth-child(2), .timezone-table td:nth-child(2) {
+  min-width: 6.5em;
+}
+
+.timezone-table th:nth-child(3), .timezone-table td:nth-child(3) {
+  min-width: 7.5em;
+}
+
 .info-callout {
   background: #e9f6f5;
   border-left: 4px solid var(--color-primary-light);
